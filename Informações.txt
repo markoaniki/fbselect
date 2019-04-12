@@ -1,0 +1,17 @@
+Projeto: FBSelect
+###########################################################################################################################################
+Um projeto de gameficação de seleção de novos alunos para o Colégio Farias Brito.
+Os participantes do projeto são:
+- Guilherme
+- Daniel
+- Marko
+- André
+- Victor
+- Thiago
+- Fabiano
+- Moura
+- Taynan
+- Riam
+
+Professor Orientador:
+- Bruno Saraiva
