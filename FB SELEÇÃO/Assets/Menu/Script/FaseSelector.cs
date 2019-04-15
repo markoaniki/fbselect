@@ -65,6 +65,12 @@ public class FaseSelector : MonoBehaviour
         FS.gameObject.SetActive(true);
     }
 
+    public void exitMainGame()
+    {
+        isInMainScene = false;
+        FS.gameObject.SetActive(false);
+    }
+
     //Dada uma entrada decide o que deve ser feito
     void Decider()
     {

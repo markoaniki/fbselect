@@ -12,10 +12,6 @@ public class ReturnButton : MonoBehaviour
     {
         Debug.Log("OK");
 
-        if (FaseSelector.FS != null && retPath == MapPath)
-        { 
-            FaseSelector.FS.returnToMainGame();
-        }
         SceneManager.LoadScene(retPath, LoadSceneMode.Single);
     }
 }
