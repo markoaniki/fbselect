@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SenhaTeste : MonoBehaviour
+public class Senha : MonoBehaviour
 {
-    public string passwordToEdit = "professorffb";
+    public string passwordToEdit = "My Password";
 
     void OnGUI()
     {

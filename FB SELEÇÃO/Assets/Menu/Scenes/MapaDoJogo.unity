@@ -758,7 +758,7 @@ MonoBehaviour:
   pathsPosition: []
   scenePaths:
   - Games/SpySky/Scenes/SpySky-Menu
-  - UCScene/UnderConstruction
+  - Games/Book Chase/Scenes/TitleScreen_BC
   - UCScene/UnderConstruction
   - UCScene/UnderConstruction
   - UCScene/UnderConstruction
