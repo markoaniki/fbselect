@@ -14,7 +14,7 @@ public class Scr_Config : MonoBehaviour
     public bool difficulty = true;
     public float scrsPQ = 0.03f; // Scores per question;
 
-    // Start & Update
+    // Awake, Start & Update
     void Start()
     {
         if(conf == null)
@@ -65,42 +65,35 @@ public class Scr_Config : MonoBehaviour
     }
 
     // Movement
-        // Left & Right
-        public Vector3 LeftRight(Vector3 dir, Animator animation)
+    public Vector3 Move(Vector3 dir, Animator animation)
+    {
+        // Up
+        if (Input.GetKey(KeyCode.UpArrow))
         {
-            // Left
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                animation.SetInteger("mDir", 3);
-                return new Vector3(-1, 0, 0);
-            }
-            //Right
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                animation.SetInteger("mDir", 4);
-                return new Vector3(1, 0, 0);
-            }
-            //No new input
-            return dir;
+            animation.SetBool("UpDown", false);
+            animation.SetInteger("mDir", 1);
+            return new Vector3(0, 0, 1);
         }
-        // Up & Down
-        public Vector3 UpDown(Vector3 dir, Animator animation)
+        // Down
+        if (Input.GetKey(KeyCode.DownArrow))
         {
-            // Up
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                animation.SetBool("UpDown", false);
-                animation.SetInteger("mDir", 1);
-                return new Vector3(0, 0, 1);
-            }
-            // Down
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                animation.SetBool("UpDown", true);
-                animation.SetInteger("mDir", 2);
-                return new Vector3(0, 0, -1);
-            }
-            // No new input
-            return dir;
+            animation.SetBool("UpDown", true);
+            animation.SetInteger("mDir", 2);
+            return new Vector3(0, 0, -1);
         }
+        // Left
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            animation.SetInteger("mDir", 3);
+            return new Vector3(-1, 0, 0);
+        }
+        //Right
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            animation.SetInteger("mDir", 4);
+            return new Vector3(1, 0, 0);
+        }
+        // No new input
+        return new Vector3(0, 0, 0);
+    }
 }

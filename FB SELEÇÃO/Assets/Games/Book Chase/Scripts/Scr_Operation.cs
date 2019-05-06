@@ -32,10 +32,22 @@ public class Scr_Operation
             case 2:
                 correct = first - second;
                 break;
+            case 3:
+                correct = first * second;
+                break;
+            case 4:
+                //first = result
+                
+                if ((int)second == 0)
+                {
+                    second = Random.Range(2, 10);
+                }
+                first = second * first;
+                break;
         }
 
         // If wanted, make the answer never go below 0
-        if(Scr_Config.conf.difficulty == false && correct < 0)
+        if (Scr_Config.conf.difficulty == false && correct < 0)
         {
             LogSave.ls.SaveLog("Min 0 Executado | ");
             correct = 0;

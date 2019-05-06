@@ -30,7 +30,7 @@ public class Scr_GameSave : MonoBehaviour
     // Start & Update
     void Start()
     {
-        if(sav == null)
+        if (sav == null)
         {
             sav = this;
         }
@@ -63,7 +63,7 @@ public class Scr_GameSave : MonoBehaviour
             SaveFile save = JsonUtility.FromJson<SaveFile>(json);
             Debug.Log(save.sav_register.ToString());
             Debug.Log(sav.register.ToString());
-            
+
             if (save.sav_qList.Count > 0 && save.sav_qList.Count < maxQuestNum)
             {
                 //Change values
@@ -72,10 +72,10 @@ public class Scr_GameSave : MonoBehaviour
                 sav.scores = save.sav_scorer;
                 sav.register = save.sav_register;
             }
-            /*else if (save.sav_qList.Count >= maxQuestNum)
+            else if (save.sav_qList.Count >= maxQuestNum)
             {
                 SceneManager.LoadScene(toCall, LoadSceneMode.Single);
-            }*/
+            }
         }
     }
 

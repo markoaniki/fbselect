@@ -7,7 +7,7 @@ public class Scr_SaveLoad : MonoBehaviour
     // Start & Update
     void Start()
     {
-        Scr_GameSave.sav.LoadFile();
+        //Scr_GameSave.sav.LoadFile();
     }
     void Update()
     {

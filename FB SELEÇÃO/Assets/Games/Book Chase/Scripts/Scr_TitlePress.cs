@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,10 +12,13 @@ public class Scr_TitlePress : MonoBehaviour
     public float speedControl = 1f;
     private float time = 0;
     public string toCall;
+    public AudioClip audClip;
+    public AudioSource audSauce;
 
     // Start is called before the first frame update
     void Start()
     {
+        audSauce.clip = audClip;
         scale = transform.localScale;
     }
 
@@ -29,8 +33,15 @@ public class Scr_TitlePress : MonoBehaviour
         {
             if ((int)(Input.inputString[0]) == 13)
             {
-                SceneManager.LoadScene(toCall, LoadSceneMode.Single);
+                StartCoroutine(Next());
             }
         }
+    }
+
+    IEnumerator Next()
+    {
+        audSauce.Play();
+        yield return new WaitWhile(() => audSauce.isPlaying);
+        SceneManager.LoadScene(toCall, LoadSceneMode.Single);
     }
 }
