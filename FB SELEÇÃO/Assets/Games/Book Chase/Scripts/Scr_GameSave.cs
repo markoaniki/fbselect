@@ -38,13 +38,15 @@ public class Scr_GameSave : MonoBehaviour
     void Update()
     {
         gameTime += Time.deltaTime;
+        /*sav.TotalScores();*/
+        Debug.Log(scores.ToString());
     }
 
     // Save & Load
     public void SaveFile()
     {
         LogSave.ls.SaveLog("SaveFile executed | ");
-        sav.scores = TotalScores();
+        /*sav.scores = TotalScores();*/
         SaveFile save = new SaveFile(sav.questList, sav.gameTime, sav.scores, sav.register);
         string json = JsonUtility.ToJson(save);
         File.WriteAllText(Application.dataPath + "\\Saves\\" + sav.register.ToString() + "_BC_SaveFile.json", json);
@@ -80,7 +82,7 @@ public class Scr_GameSave : MonoBehaviour
     }
 
     // Sum of total scores
-    public float TotalScores()
+    /*public float TotalScores()
     {
         LogSave.ls.SaveLog("Total Scores Started | ");
         int size = sav.questList.Count - 1;
@@ -96,7 +98,7 @@ public class Scr_GameSave : MonoBehaviour
         }
         LogSave.ls.SaveLog("Total Scores Executed | ");
         return scores;
-    }
+    }*/
 }
 
 [Serializable]

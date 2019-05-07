@@ -11,6 +11,7 @@ public class Scr_Config : MonoBehaviour
     public float speed = 5.5f;
     public bool isFree = true;
     public bool isInte = true;
+    public bool isProcedural = true;
     public bool difficulty = true;
     public float scrsPQ = 0.03f; // Scores per question;
 

@@ -16,6 +16,7 @@ public class Scr_Move : MonoBehaviour
     public AudioClip audClip;
     public AudioSource audSauce;
     private bool onWall = false;
+
     // Start & Update
     void Start()
     {

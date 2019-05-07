@@ -34,20 +34,27 @@ public class Scr_OperationGen : MonoBehaviour
     {
         if (answer != null)
         {
-            switch (answer.operation)
+            if (Scr_Config.conf.isProcedural)
             {
-                case 1:
-                    text.text = answer.first.ToString(Scr_Config.conf.TextFormat()) + " + " + answer.second.ToString(Scr_Config.conf.TextFormat()) + " = ???";
-                    break;
-                case 2:
-                    text.text = answer.first.ToString(Scr_Config.conf.TextFormat()) + " - " + answer.second.ToString(Scr_Config.conf.TextFormat()) + " = ???";
-                    break;
-                case 3:
-                    text.text = answer.first.ToString(Scr_Config.conf.TextFormat()) + " x " + answer.second.ToString(Scr_Config.conf.TextFormat()) + " = ???";
-                    break;
-                case 4:
-                    text.text = answer.first.ToString(Scr_Config.conf.TextFormat()) + " ÷ " + answer.second.ToString(Scr_Config.conf.TextFormat()) + " = ???";
-                    break;
+                text.text = answer.question;
+            }
+            else
+            {
+                switch (answer.operation)
+                {
+                    case 1:
+                        text.text = answer.first.ToString(Scr_Config.conf.TextFormat()) + " + " + answer.second.ToString(Scr_Config.conf.TextFormat()) + " = ???";
+                        break;
+                    case 2:
+                        text.text = answer.first.ToString(Scr_Config.conf.TextFormat()) + " - " + answer.second.ToString(Scr_Config.conf.TextFormat()) + " = ???";
+                        break;
+                    case 3:
+                        text.text = answer.first.ToString(Scr_Config.conf.TextFormat()) + " x " + answer.second.ToString(Scr_Config.conf.TextFormat()) + " = ???";
+                        break;
+                    case 4:
+                        text.text = answer.first.ToString(Scr_Config.conf.TextFormat()) + " ÷ " + answer.second.ToString(Scr_Config.conf.TextFormat()) + " = ???";
+                        break;
+                }
             }
         }
     }
@@ -87,8 +94,17 @@ public class Scr_OperationGen : MonoBehaviour
     // Operation Creation
     public void CreateOperation()
     {
-        LogSave.ls.SaveLog("Create Operation Executado | ");
-        answer = new Scr_Operation(Scr_Config.conf.RandomNum(1f, 10f), Scr_Config.conf.RandomNum(1f, 15f), 0);
-        Scr_Config.conf.isFree = false;
+        if (Scr_Config.conf.isProcedural == false) {
+            LogSave.ls.SaveLog("Create Operation Executado | ");
+            answer = new Scr_Operation(Scr_Config.conf.RandomNum(1f, 10f), Scr_Config.conf.RandomNum(1f, 15f), 0);
+            Scr_Config.conf.isFree = false;
+        }
+        else
+        {
+            // Corrigir
+            SaveAndLoadQuestions.sad.setRdmQuestion();
+            answer = new Scr_Operation(SaveAndLoadQuestions.sad.actQuestion.options, SaveAndLoadQuestions.sad.actQuestion.question);
+            Scr_Config.conf.isFree = false;
+        }
     }
 }

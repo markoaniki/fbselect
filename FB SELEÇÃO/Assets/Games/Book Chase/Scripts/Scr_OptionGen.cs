@@ -21,11 +21,15 @@ public class Scr_OptionGen : MonoBehaviour
     private Vector3 maxPosXZ;
     private bool nonRepeat = false;
 
-
+    // Start & Update
     void Start()
     {
         minPosXZ = minXZ.transform.position;
         maxPosXZ = maxXZ.transform.position;
+    }
+    void random()
+    {
+
     }
 
     void Update()
@@ -39,10 +43,23 @@ public class Scr_OptionGen : MonoBehaviour
                 List<float> answers = new List<float>();
                 Scr_GameSave.sav.questList.Add(new Scr_QuestSave(Scr_GameSave.sav.register, Scr_Config.conf.scrsPQ));
                 LogSave.ls.SaveLog("question added to questList | ");
-                answers.Add(Scr_OperationGen.ops.answer.correct);
-                LogSave.ls.SaveLog("Corect Answer added | ");
-                answers.Add(VerifyGenerate(answers));
-                answers.Add(VerifyGenerate(answers));
+                if (Scr_Config.conf.isProcedural)
+                {
+                    answers.Add(Scr_OperationGen.ops.answer.options[0]);
+                    LogSave.ls.SaveLog("Corect Answer added | ");
+                    for (int i = 1; i < Scr_OperationGen.ops.answer.options.Count; i++)
+                    {
+                        Debug.Log(i.ToString());
+                        answers.Add(Scr_OperationGen.ops.answer.options[i]);
+                    }
+                }
+                else
+                {
+                    answers.Add(Scr_OperationGen.ops.answer.correct);
+                    LogSave.ls.SaveLog("Corect Answer added | ");
+                    answers.Add(VerifyGenerate(answers));
+                    answers.Add(VerifyGenerate(answers));
+                }
                 List<Vector3> oldPos = new List<Vector3>();
                 oldPos.Add(this.transform.position);
                 while (answers.Count > 0)
@@ -165,7 +182,9 @@ public class Scr_OptionGen : MonoBehaviour
 
         if(ao.answer == Scr_OperationGen.ops.answer.correct)
         {
-            Scr_GameSave.sav.questList[Scr_GameSave.sav.questList.Count - 1].isCorrect = true;
+            //Scr_GameSave.sav.questList[Scr_GameSave.sav.questList.Count - 1].isCorrect = true;
+            Scr_GameSave.sav.scores += 0.33f;
+            Debug.Log("Entrou");
         }
 
         LogSave.ls.SaveLog("OnCollisionEnter of Scr_OptionGen Executado | ");

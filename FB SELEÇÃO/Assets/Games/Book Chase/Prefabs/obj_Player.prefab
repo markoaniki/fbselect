@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 5709063091080092905}
   - component: {fileID: 5709063091080092886}
   - component: {fileID: 5709063091080092887}
+  - component: {fileID: 7878403738604774312}
   - component: {fileID: 7678006902065431850}
   m_Layer: 0
   m_Name: obj_Player
@@ -227,10 +228,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bc70cf4a6531db4eaae6829efc3f421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxQuestNum: 30
   questList: []
   gameTime: 0
   scores: 0
   register: 0
+  toCall: 
 --- !u!114 &5709063091080092885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +261,7 @@ MonoBehaviour:
   speed: 5.5
   isFree: 1
   isInte: 1
+  isProcedural: 1
   difficulty: 1
   scrsPQ: 0.03
 --- !u!114 &5709063091080092905
@@ -276,6 +280,8 @@ MonoBehaviour:
   cool: 1
   minXZ: {fileID: 0}
   maxXZ: {fileID: 0}
+  audClip: {fileID: 0}
+  audSauce: {fileID: 0}
 --- !u!114 &5709063091080092886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +298,6 @@ MonoBehaviour:
   sphere: {fileID: 5393655942343906993, guid: e87a22972514dfa41835cacdb020a592, type: 3}
   errorMargin: 10
   minRadius: 6
-  maxRadius: 10
   numQuestions: 0
   varMargin: 5
   minVarMar: 3
@@ -312,8 +317,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textGo: {fileID: 0}
-  sumPerc: 0.5
+  numOfOps: 4
+  chanceDecay: 2
   question: 
+--- !u!114 &7878403738604774312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5709063091080092910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389c4585ab1f5ac429fbee4672a15b51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  automatic: 0
+  text: {fileID: 0}
+  buttons: []
+  PathR: 
+  splitchar: 124
+  PathM: 
+  maxValue: 50
 --- !u!114 &7678006902065431850
 MonoBehaviour:
   m_ObjectHideFlags: 0
