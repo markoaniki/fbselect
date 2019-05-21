@@ -40,7 +40,7 @@ public class Scr_OptionGen : MonoBehaviour
             {
                 Scr_OperationGen.ops.question = "Questão " + numQuestions.ToString() + ":";
                 Scr_OperationGen.ops.CreateOperation();
-                List<float> answers = new List<float>();
+                List<string> answers = new List<string>();
                 Scr_GameSave.sav.questList.Add(new Scr_QuestSave(Scr_GameSave.sav.register, Scr_Config.conf.scrsPQ));
                 LogSave.ls.SaveLog("question added to questList | ");
                 if (Scr_Config.conf.isProcedural)
@@ -55,13 +55,14 @@ public class Scr_OptionGen : MonoBehaviour
                 }
                 else
                 {
-                    answers.Add(Scr_OperationGen.ops.answer.correct);
+                    /*answers.Add(Scr_OperationGen.ops.answer.correct);
                     LogSave.ls.SaveLog("Corect Answer added | ");
                     answers.Add(VerifyGenerate(answers));
-                    answers.Add(VerifyGenerate(answers));
+                    answers.Add(VerifyGenerate(answers));*/
                 }
                 List<Vector3> oldPos = new List<Vector3>();
                 oldPos.Add(this.transform.position);
+                bool locker = false;
                 while (answers.Count > 0)
                 {
                     Vector3 vec = SpawnPosition(oldPos);
@@ -70,7 +71,12 @@ public class Scr_OptionGen : MonoBehaviour
                     ansList.Add(temp);
                     Scr_Option component = temp.GetComponent<Scr_Option>();
                     int spherePos = Random.Range(0, answers.Count);
-                    component.answer = answers[spherePos];
+                    component.answer = answers[spherePos].ToString();
+                    if(spherePos == 0 && locker == false)
+                    {
+                        component.correct = true;
+                        locker = true;
+                    }
                     answers.RemoveAt(spherePos);
                 }
                 LogSave.ls.SaveLog("All options spawned | ");
@@ -180,7 +186,7 @@ public class Scr_OptionGen : MonoBehaviour
     {
         Scr_Option ao = collision.gameObject.GetComponent<Scr_Option>();
 
-        if(ao.answer == Scr_OperationGen.ops.answer.correct)
+        if(ao.correct)
         {
             //Scr_GameSave.sav.questList[Scr_GameSave.sav.questList.Count - 1].isCorrect = true;
             Scr_GameSave.sav.scores += 0.33f;

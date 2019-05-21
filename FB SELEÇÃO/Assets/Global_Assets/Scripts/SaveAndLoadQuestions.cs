@@ -62,7 +62,7 @@ public class SaveAndLoadQuestions : MonoBehaviour
 
                 q.question = entries[0];
 
-                for (int i = 1; i < length; i++) { q.options.Add(float.Parse(entries[i])); }
+                for (int i = 1; i < length; i++) { q.options.Add(entries[i]); }
 
                 Questions.Add(q);
             }
@@ -178,7 +178,7 @@ public class SaveAndLoadQuestions : MonoBehaviour
     {
         if (Questions.Count == 0) { return; }
         string str = "";
-        foreach(float f in actQuestion.options)
+        foreach(string f in actQuestion.options)
         {
             str += f.ToString() + splitchar;
         }

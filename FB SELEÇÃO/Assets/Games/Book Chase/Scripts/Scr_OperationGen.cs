@@ -43,16 +43,16 @@ public class Scr_OperationGen : MonoBehaviour
                 switch (answer.operation)
                 {
                     case 1:
-                        text.text = answer.first.ToString(Scr_Config.conf.TextFormat()) + " + " + answer.second.ToString(Scr_Config.conf.TextFormat()) + " = ???";
+                        //text.text = answer.first.ToString(Scr_Config.conf.TextFormat()) + " + " + answer.second.ToString(Scr_Config.conf.TextFormat()) + " = ???";
                         break;
                     case 2:
-                        text.text = answer.first.ToString(Scr_Config.conf.TextFormat()) + " - " + answer.second.ToString(Scr_Config.conf.TextFormat()) + " = ???";
+                       // text.text = answer.first.ToString(Scr_Config.conf.TextFormat()) + " - " + answer.second.ToString(Scr_Config.conf.TextFormat()) + " = ???";
                         break;
                     case 3:
-                        text.text = answer.first.ToString(Scr_Config.conf.TextFormat()) + " x " + answer.second.ToString(Scr_Config.conf.TextFormat()) + " = ???";
+                        //text.text = answer.first.ToString(Scr_Config.conf.TextFormat()) + " x " + answer.second.ToString(Scr_Config.conf.TextFormat()) + " = ???";
                         break;
                     case 4:
-                        text.text = answer.first.ToString(Scr_Config.conf.TextFormat()) + " ÷ " + answer.second.ToString(Scr_Config.conf.TextFormat()) + " = ???";
+                       // text.text = answer.first.ToString(Scr_Config.conf.TextFormat()) + " ÷ " + answer.second.ToString(Scr_Config.conf.TextFormat()) + " = ???";
                         break;
                 }
             }

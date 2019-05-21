@@ -10,15 +10,14 @@ public class Scr_Operation
     public float correct;
     public int operation; // 0 = dynamic | 1 = soma | 2 = subitração
     // variables Files
-    public List<float> options;
+    public List<string> options;
     public string question;
 
     // Constructor
-    public Scr_Operation(List<float> options, string question)
+    public Scr_Operation(List<string> options, string question)
     {
         this.options = options;
         this.question = question;
-        correct = options[0];
     }
     public Scr_Operation(float first, float second, int operation)
     {

@@ -5,7 +5,8 @@ using UnityEngine;
 public class Scr_Option : MonoBehaviour
 {
     // Variables
-    public float answer;
+    public string answer;
+    public bool correct = false;
     public AudioClip audClip;
     public AudioSource audSauce;
 
@@ -13,9 +14,9 @@ public class Scr_Option : MonoBehaviour
     void Start()
     {
         audSauce.clip = audClip;
-        answer = Scr_Config.conf.IsInteger(answer);
+        //answer = Scr_Config.conf.IsInteger(answer);
         TextMesh tm = this.GetComponentInChildren<TextMesh>();
-        tm.text = answer.ToString(Scr_Config.conf.TextFormat());
+        tm.text = answer;
         audSauce.Play();
     }
     void Update()
