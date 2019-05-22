@@ -1,0 +1,5 @@
+﻿Equação igual ,opçãoCorreta, opção2,...,opçãpN;
+3 + X > Y, então X = ? |É NOIS|5|7|15
+3 + 3 > Y, então Y = ? |5|7|15|8
+3 - X = Y, então X = ? |3|0|1|6
+3 - 0 = Y, então Y = ? |6|0|1|9

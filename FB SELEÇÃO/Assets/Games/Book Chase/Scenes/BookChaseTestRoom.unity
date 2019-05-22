@@ -2015,7 +2015,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163317619}
   m_LocalRotation: {x: 0.33036613, y: 0.08852132, z: -0.24321029, w: 0.90767336}
-  m_LocalPosition: {x: 0.49211478, y: 5.7088466, z: 4.790292}
+  m_LocalPosition: {x: 0.2, y: 5.8, z: 4.9}
   m_LocalScale: {x: 0.45, y: 0.45000017, z: 1}
   m_Children: []
   m_Father: {fileID: 1102475436}
@@ -2780,7 +2780,7 @@ PrefabInstance:
     - target: {fileID: 7878403738604774312, guid: 045731f86218ebe4f9a644a749671ea2,
         type: 3}
       propertyPath: PathR
-      value: Assets/Global_Assets/Resources/QuestionsR.txt
+      value: Assets/Global_Assets/Resources/QuestionsR_BC.txt
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 045731f86218ebe4f9a644a749671ea2, type: 3}
