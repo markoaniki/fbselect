@@ -6,9 +6,9 @@ public class criarInimigos : MonoBehaviour
 {
     public int livros = 0;
     
-    [Range(780, 1000)]
+    [Range(780, 1500)]
     public int yMinValue;
-    [Range(780, 1000)]
+    [Range(780, 1500)]
     public int yMaxValue;
     public int numeroEnemy;
     int ypos = 740;
@@ -20,7 +20,7 @@ public class criarInimigos : MonoBehaviour
     {
        for (int i = 0; i < numeroEnemy; i++)
        {
-            GameObject a = Instantiate (inimigos[Random.Range(0, 2)]);
+            GameObject a = Instantiate (inimigos[Random.Range(0, 4)]);
             a.transform.position = new Vector2(posicoes[i], Random.Range(yMinValue, yMaxValue));
        }
 

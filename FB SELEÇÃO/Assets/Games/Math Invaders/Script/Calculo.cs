@@ -22,6 +22,8 @@ public class Calculo : MonoBehaviour
 
         gameObject.GetComponentInChildren<Text>().text = x + " " + operacao + " " + y;
 
+        //Colocar CASE SWITCH para adicionar os valores da conta na variável RES.
+
     }
 
     
