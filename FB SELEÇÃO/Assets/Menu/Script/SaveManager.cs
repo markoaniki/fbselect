@@ -64,6 +64,11 @@ public class SaveManager : MonoBehaviour
         return s.GetQuestionByID(questionID);
     }
 
+    public static void SetQuestionByID(int questionID)
+    {
+        estudanteLogado.SetQuestion(questionID);
+    }
+
     public static List<Questao> GetAllQuestions(Student s)
     {
         return s.Questions;

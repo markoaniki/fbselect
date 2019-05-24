@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using TMPro;
 
 public class Calculo : MonoBehaviour
 {
     
+    public InputField resposta;
+
     //Criar variáveis X Y Operação Resultado
 
     int x, y, res;
 
-    string operacao;
+    char operacao;
     
-    string[] operacoesPossiveis = {"+" , "-" , "x" , "÷"};
+    char[] operacoesPossiveis = {'+' , '-' , 'x' , '÷'};
 
     public void criarOperacao(){
         x = Random.Range(0 , 25);
@@ -23,6 +27,24 @@ public class Calculo : MonoBehaviour
         gameObject.GetComponentInChildren<Text>().text = x + " " + operacao + " " + y;
 
         //Colocar CASE SWITCH para adicionar os valores da conta na variável RES.
+
+        switch (operacao)
+        {
+            case '÷':
+                res = x / y;
+                break;
+            case 'x':
+                res = x * y;
+                break;
+            case '-':
+                res = x - y;
+                break;
+            case '+':
+                res = x + y;
+                break;
+            default:
+                break;
+        }
 
     }
 

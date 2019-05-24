@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SenhaTeste : MonoBehaviour
 {
     public GameObject canvas3, canvas4;
-    private int timeload = 3;
+    public int timeload = 1;
     private const string Login = "admin";
     private const string Pass = "admin";
 
@@ -28,10 +28,22 @@ public class SenhaTeste : MonoBehaviour
         // passField = senhaField.GetComponent<Text>();
     }
     
-    public void FazerLogin(){
-        string usuario = usuarioField.text;
-        string senha = senhaField.text;
+    public void FazerLogin(bool DebugMode){
+        
+        string usuario;
+        string senha;
 
+        if(DebugMode)
+        {
+            usuario = Login;
+            senha = Pass;
+        }
+        else
+        {
+            usuario = usuarioField.text;
+            senha = senhaField.text;
+        }
+        
         if(usuario == Login && senha == Pass){
             feedbackmsg.CrossFadeAlpha(100f, 0f, false);
             feedbackmsg.color = Color.green;

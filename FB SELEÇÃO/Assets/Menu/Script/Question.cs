@@ -14,6 +14,11 @@ public class Questao
         IsDone = false;
     }
 
+    public void beginQuestion()
+    {
+        IsDone = false;
+    }
+
     public void endQuestion(float hitPercentage)
     {
         HitPercentage = hitPercentage;

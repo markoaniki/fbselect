@@ -15,6 +15,8 @@ public class Student
 
     public List<Questao> Questions { get; set; }
 
+    public Questao inProgressQuestion { get; set; }
+
     private List<Questao> GenerateQuestions(List<int> questions)
     {
         List<Questao> qs = new List<Questao>();
@@ -43,5 +45,19 @@ public class Student
             if (q.QuestionID == questionID) { return q; }
         }
         return null;
+    }
+
+    public bool SetQuestion(int questionID)
+    {
+        Questao q = GetQuestionByID(questionID);
+        
+        if(q != null)
+        {
+            inProgressQuestion = q;
+            q.beginQuestion();
+            return true;
+        }
+
+        return false;
     }
 }
