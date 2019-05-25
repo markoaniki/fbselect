@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class InputNumeros : MonoBehaviour
 {
 
-    int saveNum = 0;
+    static public int saveNum = 0;
     public InputField numero;
     public void SetInputFieldActive (){
         EventSystem.current.SetSelectedGameObject(numero.gameObject, null);

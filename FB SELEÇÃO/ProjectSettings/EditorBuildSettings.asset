@@ -12,15 +12,21 @@ EditorBuildSettings:
     path: Assets/Menu/Scenes/MapaDoJogo.unity
     guid: 456e8e675ddcada43a77b88a41ee7f39
   - enabled: 1
-    path: Assets/Games/SpySky/Scenes/SpySky-Menu.unity
-    guid: 48e25d114610a2d46ab7d04546ae8786
-  - enabled: 1
-    path: Assets/Games/SpySky/Scenes/SpySky.unity
-    guid: 28a4b3b395a4a0b4a808dc9ed3b57416
-  - enabled: 1
     path: Assets/UCScene/UnderConstruction.unity
     guid: 0959ffec35446fe4eafb57075356e6fc
   - enabled: 1
     path: Assets/Menu/Scenes/InicializarBanco.unity
     guid: 68c440de599055541894211de79939d6
+  - enabled: 1
+    path: Assets/Games/SkySpy/Scenes/Menu.unity
+    guid: 48e25d114610a2d46ab7d04546ae8786
+  - enabled: 1
+    path: Assets/Games/SkySpy/Scenes/Jogo.unity
+    guid: 28a4b3b395a4a0b4a808dc9ed3b57416
+  - enabled: 1
+    path: Assets/Games/Math Invaders/Scenes/Math Invaders.unity
+    guid: cc91907c1ccb199458766eb4ce0be373
+  - enabled: 1
+    path: Assets/Games/Math Invaders/Scenes/MenuMathInvaders.unity
+    guid: bd88fdc6bc26e0b4da7983718f5abca1
   m_configObjects: {}

@@ -11,62 +11,94 @@ public class Calculo : MonoBehaviour
     public InputField resposta;
 
     //Criar variáveis X Y Operação Resultado
-
+    public int min = 0, max = 50;
+    
     int x, y, res;
+
+    int[] primos = {2, 3, 5, 7};
 
     char operacao;
     
     char[] operacoesPossiveis = {'+' , '-' , 'x' , '÷'};
 
+    Vector3Int maxNum()
+    {
+        List<int> usados = new List<int>();
+        int res = 1;
+        int Last = 1;
+        while(true)
+        {
+            Last = primos[Random.Range(0, primos.Length)];
+            res *= Last;
+
+            if(res > max){ break; }
+            
+            usados.Add(Last);
+        }
+
+        res /= Last;
+
+        int n = Random.Range(1, usados.Count);
+
+        int x = 1;
+
+        for(int i = 0; i < n; i++)
+        {
+            int index = Random.Range(0, usados.Count);
+            int temp = usados[index];
+            x *= temp;
+            usados.RemoveAt(index);
+        }
+
+        int y = res/x;
+        
+        return new Vector3Int(x,y,res);
+    }
+
     public void criarOperacao(){
-        x = Random.Range(0 , 25);
-        y = Random.Range(0 , 25);
-
         operacao = operacoesPossiveis[Random.Range(0 , 4)];
-
-        gameObject.GetComponentInChildren<Text>().text = x + " " + operacao + " " + y;
 
         //Colocar CASE SWITCH para adicionar os valores da conta na variável RES.
 
         switch (operacao)
         {
             case '÷':
-                res = x / y;
+                Vector3Int op12MaxDiv = maxNum();
+                res = op12MaxDiv.x;
+                x = op12MaxDiv.z;
+                y = op12MaxDiv.y;
                 break;
             case 'x':
-                res = x * y;
+                Vector3Int op12Max = maxNum();
+                Debug.Log(op12Max);
+                res = op12Max.z;
+                x = op12Max.x;
+                y = op12Max.y;
+                //x = Random.Range((int)min,max/5);
+                //y = Random.Range((int)min,max/5);
+                //res = x * y;
                 break;
             case '-':
+                x = Random.Range((int)max/2,max);
+                y = Random.Range(min, x);
                 res = x - y;
                 break;
             case '+':
-                res = x + y;
+                res = Random.Range((int)max/2,max);
+                y = Random.Range(min, res);
+                x = res - y;
                 break;
             default:
                 break;
         }
+
+        gameObject.GetComponentInChildren<Text>().text = x + " " + operacao + " " + y;
 
     }
 
     
 
 
-    // int adicao(){
-    //     return x+y;
-    // }
-
-    // int subtracao(){
-    //     if(x >= y && x-y >= 0){
-    //         return x-y;
-    //     } 
-    // }
-    // int multiplicacao(){
-    //     return x*y;
-    // }
-
-    // int divisao(){
-    //     return x/y;
-    // }
 
     // Start is called before the first frame update
     void Start()

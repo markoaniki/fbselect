@@ -8,12 +8,13 @@ using UnityEngine.UI;
 
 public class SaveAndLoadQuestions : MonoBehaviour
 {
+    public static SaveAndLoadQuestions sad = null;
     [SerializeField]
-    static public List<Question> Questions = new List<Question>();
+    public static List<Question> Questions = new List<Question>();
 
     [Header("General Settings")]
     public bool automatic = false;
-    public Text text;
+
     public List<GameObject> buttons = new List<GameObject>();
 
     [Header("Equation Non-Randomized Settings")]
@@ -24,8 +25,15 @@ public class SaveAndLoadQuestions : MonoBehaviour
     public string PathM;
     public float maxValue = 50f;
 
-    Question actQuestion = null;
+    public Question actQuestion = null;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        if(sad == null)
+        {
+            sad = this;
+        }
+    }
     void Start()
     {
         loader();
@@ -54,7 +62,7 @@ public class SaveAndLoadQuestions : MonoBehaviour
 
                 q.question = entries[0];
 
-                for (int i = 1; i < length; i++) { q.options.Add(float.Parse(entries[i])); }
+                for (int i = 1; i < length; i++) { q.options.Add(entries[i]); }
 
                 Questions.Add(q);
             }
@@ -157,21 +165,20 @@ public class SaveAndLoadQuestions : MonoBehaviour
         catch (Exception e) { Debug.Log(e); }
     }
 
-    void setRdmQuestion()
+    public void setRdmQuestion()
     {
         int count = Questions.Count;
         if (count == 0) { return; }
         int index = UnityEngine.Random.Range(0, count);
         actQuestion = Questions[index];
         Questions.RemoveAt(index);
-        text.text = actQuestion.question;
     }
 
     void printOptions()
     {
         if (Questions.Count == 0) { return; }
         string str = "";
-        foreach(float f in actQuestion.options)
+        foreach(string f in actQuestion.options)
         {
             str += f.ToString() + splitchar;
         }

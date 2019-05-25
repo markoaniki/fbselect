@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: a196465de9a2cfd48a4c9aec8d82a836
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - particulaFolha: {instanceID: 0}
+  - somInimigo: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

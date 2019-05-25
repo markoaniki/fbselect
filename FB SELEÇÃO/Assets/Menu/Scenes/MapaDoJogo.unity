@@ -757,8 +757,8 @@ MonoBehaviour:
   - {fileID: 1037262423}
   pathsPosition: []
   scenePaths:
-  - Games/SpySky/Scenes/SpySky-Menu
-  - UCScene/UnderConstruction
+  - Games/SkySpy/Scenes/Menu
+  - Games/Math Invaders/Scenes/MenuMathInvaders
   - UCScene/UnderConstruction
   - UCScene/UnderConstruction
   - UCScene/UnderConstruction

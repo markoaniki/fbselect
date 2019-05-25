@@ -5,5 +5,5 @@ using UnityEngine;
 public class Question
 {
     public string question = "";
-    public List<float> options = new List<float>();
+    public List<string> options = new List<string>();
 }
