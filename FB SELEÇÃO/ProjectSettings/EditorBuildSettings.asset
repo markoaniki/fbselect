@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Games/Math Invaders/Scenes/MenuMathInvaders.unity
     guid: bd88fdc6bc26e0b4da7983718f5abca1
+  - enabled: 1
+    path: Assets/Games/Book Chase/Scenes/TitleScreen_BC.unity
+    guid: e76c39535a7e7f543b36a3285e71e6d2
+  - enabled: 1
+    path: Assets/Games/Book Chase/Scenes/EndScreen_BC.unity
+    guid: cf5703c1ee0e9f74ebf2b17534916cf4
+  - enabled: 1
+    path: Assets/Games/Book Chase/Scenes/BookChaseTestRoom.unity
+    guid: e00186c3f97ed4e409bc9f7cf7cfdac5
   m_configObjects: {}

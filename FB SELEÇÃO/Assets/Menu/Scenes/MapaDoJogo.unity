@@ -769,6 +769,8 @@ MonoBehaviour:
   - UCScene/UnderConstruction
   speed: 2
   moveAjuster: 0.1
+  charTransform: {fileID: 1534017179}
+  anim: {fileID: 1534017177}
   firstIndex: 0
 --- !u!135 &1309383164
 SphereCollider:

@@ -28,7 +28,7 @@ public class AddStudent : MonoBehaviour
     {
         Debug.Log("Funcionou carai: " + Nome.text + Dia.options[Dia.value].text);
 
-        if(Nome.text != nada && EscolaAntiga.text != nada){
+        if(Nome.text != nada && EscolaAntiga.text != nada && Serie.value != 0){
             feedbackmsg.CrossFadeAlpha(100f, 0f, false);
             feedbackmsg.color = Color.green;
             feedbackmsg.text = "Cadastro realizado com sucesso...";
@@ -44,7 +44,6 @@ public class AddStudent : MonoBehaviour
             feedbackmsg.text = "Preencha todos os campos";
             feedbackmsg.CrossFadeAlpha(0f, 2f, false);
         }
-
 
     }
 

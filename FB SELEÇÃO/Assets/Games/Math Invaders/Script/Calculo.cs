@@ -7,13 +7,15 @@ using TMPro;
 
 public class Calculo : MonoBehaviour
 {
-    
-    public InputField resposta;
 
     //Criar variáveis X Y Operação Resultado
     public int min = 0, max = 50;
     
-    int x, y, res;
+    int x, y;
+
+    public int res;
+
+    public bool resetQuestion;
 
     int[] primos = {2, 3, 5, 7};
 
@@ -103,6 +105,7 @@ public class Calculo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        resetQuestion = true;
         criarOperacao();
         // Debug.Log(adicao());
     }
@@ -110,6 +113,10 @@ public class Calculo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(resetQuestion)
+        {
+            criarOperacao();
+            resetQuestion = false;
+        }
     }
 }

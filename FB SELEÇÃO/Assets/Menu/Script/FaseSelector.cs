@@ -16,12 +16,18 @@ public class FaseSelector : MonoBehaviour
     public float moveAjuster = 0.1f;
     MeshRenderer mr = null;
 
+    public Transform charTransform = null;
+
+    public Animator anim = null;
+
     private int thisIndex = 0;
     public int firstIndex = 0;
     private int endIndex;
 
     private bool isInMainScene = false;
     private bool isMoving = false;
+
+    private bool isMovingRight = true;
 
     private Vector3 moveTo = new Vector3(0.0f, 0.0f, 0.0f);
 
@@ -79,6 +85,8 @@ public class FaseSelector : MonoBehaviour
             if (Input.GetKeyDown(kNext) && endIndex > thisIndex)
             {
                 isMoving = true;
+                anim.SetBool("Idle",false);
+                if(!isMovingRight){ isMovingRight = true; charTransform.Rotate(0,180,0); }
                 thisIndex++;
                 Debug.Log(thisIndex);
                 Debug.Log("Not Read To Go");
@@ -89,6 +97,8 @@ public class FaseSelector : MonoBehaviour
             if (Input.GetKeyDown(kReturn) && 0 < thisIndex)
             {
                 isMoving = true;
+                anim.SetBool("Idle",false);
+                if(isMovingRight){ isMovingRight = false; charTransform.Rotate(0,180,0); }
                 thisIndex--;
                 Debug.Log(thisIndex);
                 Debug.Log("Not Read To Go");
@@ -99,6 +109,7 @@ public class FaseSelector : MonoBehaviour
             if (Input.GetKeyDown(selecter))
             {
                 isInMainScene = false;
+                SaveManager.estudanteLogado.SetQuestion(thisIndex);
                 SceneManager.LoadScene(scenePaths[thisIndex], LoadSceneMode.Single);
 
                 isInMainScene = false;
@@ -122,6 +133,7 @@ public class FaseSelector : MonoBehaviour
                 {
                     pos = moveTo;
                     isMoving = false;
+                    anim.SetBool("Idle",true);
                     Debug.Log("Read To Go");
                 }
                 transform.position = pos;

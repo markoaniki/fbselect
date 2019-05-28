@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class InputNumeros : MonoBehaviour
 {
-
+    public List<Calculo> calculos;
     static public int saveNum = 0;
     public InputField numero;
     public void SetInputFieldActive (){
@@ -19,6 +19,19 @@ public class InputNumeros : MonoBehaviour
         SetInputFieldActive();  
     }
 
+    void testCalc()
+    {
+        foreach (Calculo c in calculos)
+        {
+            if(c.res == saveNum)
+            {
+                c.resetQuestion = false;
+                Debug.Log("OK!");
+                return;
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -26,6 +39,7 @@ public class InputNumeros : MonoBehaviour
         {
             saveNum = int.Parse(numero.text);
             Debug.Log(saveNum);
+            testCalc();
             numero.text="";
             SetInputFieldActive();
         }
