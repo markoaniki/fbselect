@@ -112,7 +112,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &38947364
+--- !u!1 &30118487
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,49 +120,27 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 38947366}
-  - component: {fileID: 38947365}
+  - component: {fileID: 30118488}
   m_Layer: 0
-  m_Name: Objeto TESTE
+  m_Name: Shooter2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &38947365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 38947364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fff4cff9846be54a902308ec9427572, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resposta: {fileID: 0}
-  Texto: {fileID: 0}
-  minX: 0
-  maxX: 0
-  minY: 0
-  maxY: 0
-  x: 0
-  y: 0
-  res: 0
---- !u!4 &38947366
+--- !u!4 &30118488
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 38947364}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 443.8154, y: 507.62756, z: -7.375}
+  m_GameObject: {fileID: 30118487}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 424, y: 326, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &95853995
 GameObject:
@@ -343,6 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   min: 0
   max: 50
+  tela: {fileID: 2032362802}
   res: 0
   resetQuestion: 0
 --- !u!1 &99147044
@@ -1004,6 +983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   min: 0
   max: 50
+  tela: {fileID: 1888660107}
   res: 0
   resetQuestion: 0
 --- !u!1 &538205624
@@ -1017,7 +997,6 @@ GameObject:
   - component: {fileID: 538205626}
   - component: {fileID: 538205625}
   - component: {fileID: 538205627}
-  - component: {fileID: 538205628}
   m_Layer: 0
   m_Name: Livro1
   m_TagString: livro
@@ -1113,22 +1092,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.83, y: 5.9599996}
   m_EdgeRadius: 0
---- !u!114 &538205628
-MonoBehaviour:
+--- !u!1 &551531795
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 538205624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b01f88f1522e1fb4c963c65eaf69ec23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  min: 0
-  max: 50
-  res: 0
-  resetQuestion: 0
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 551531796}
+  m_Layer: 0
+  m_Name: Shooter1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &551531796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551531795}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 287, y: 326, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &569299258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,6 +1280,12 @@ MonoBehaviour:
   - {fileID: 1827925812}
   - {fileID: 2068202306}
   - {fileID: 467710369}
+  Shooters:
+  - {fileID: 551531796}
+  - {fileID: 30118488}
+  - {fileID: 2019748224}
+  - {fileID: 2028736595}
+  bala: {fileID: 4453239720224161448, guid: 561076bb144c8294eaf152c15632ccfd, type: 3}
   numero: {fileID: 569299260}
 --- !u!1 &788087291
 GameObject:
@@ -2516,6 +2515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   min: 0
   max: 50
+  tela: {fileID: 2048079253}
   res: 0
   resetQuestion: 0
 --- !u!1 &1888660105
@@ -2694,6 +2694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   livros: 0
+  MensagemFinal: {fileID: 1205876096}
   yMinValue: 780
   yMaxValue: 1500
   numeroEnemy: 4
@@ -2899,6 +2900,66 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.8600001, y: 6.02}
   m_EdgeRadius: 0
+--- !u!1 &2019748223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2019748224}
+  m_Layer: 0
+  m_Name: Shooter3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2019748224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019748223}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 724, y: 326, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2028736594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2028736595}
+  m_Layer: 0
+  m_Name: Shooter4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2028736595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028736594}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 857, y: 326, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2032362800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3170,6 +3231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   min: 0
   max: 50
+  tela: {fileID: 863309157}
   res: 0
   resetQuestion: 0
 --- !u!1 &2146214401

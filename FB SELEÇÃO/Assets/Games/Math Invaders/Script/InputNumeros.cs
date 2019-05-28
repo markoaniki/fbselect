@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 public class InputNumeros : MonoBehaviour
 {
     public List<Calculo> calculos;
+    public List<Transform> Shooters;
+    public GameObject bala = null;
     static public int saveNum = 0;
     public InputField numero;
     public void SetInputFieldActive (){
@@ -21,11 +23,13 @@ public class InputNumeros : MonoBehaviour
 
     void testCalc()
     {
-        foreach (Calculo c in calculos)
+        for (int i = 0; i < calculos.Count; i++)
         {
-            if(c.res == saveNum)
+            if(calculos[i].res == saveNum)
             {
-                c.resetQuestion = false;
+                //atirar bala do Transform i
+                Instantiate(bala, Shooters[i].position, Quaternion.identity);
+                calculos[i].resetQuestion = true;
                 Debug.Log("OK!");
                 return;
             }
@@ -35,10 +39,12 @@ public class InputNumeros : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            saveNum = int.Parse(numero.text);
-            Debug.Log(saveNum);
+            string tx = numero.text;
+            //Debug.Log(tx);
+            saveNum = int.Parse(tx);
+            //Debug.Log(saveNum);
             testCalc();
             numero.text="";
             SetInputFieldActive();

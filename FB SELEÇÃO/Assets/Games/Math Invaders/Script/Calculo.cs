@@ -11,11 +11,15 @@ public class Calculo : MonoBehaviour
     //Criar variáveis X Y Operação Resultado
     public int min = 0, max = 50;
     
+    public Text tela;
+
     int x, y;
 
     public int res;
 
     public bool resetQuestion;
+
+    bool hasFinished;
 
     int[] primos = {2, 3, 5, 7};
 
@@ -72,13 +76,10 @@ public class Calculo : MonoBehaviour
                 break;
             case 'x':
                 Vector3Int op12Max = maxNum();
-                Debug.Log(op12Max);
+                // Debug.Log(op12Max);
                 res = op12Max.z;
                 x = op12Max.x;
                 y = op12Max.y;
-                //x = Random.Range((int)min,max/5);
-                //y = Random.Range((int)min,max/5);
-                //res = x * y;
                 break;
             case '-':
                 x = Random.Range((int)max/2,max);
@@ -94,7 +95,9 @@ public class Calculo : MonoBehaviour
                 break;
         }
 
-        gameObject.GetComponentInChildren<Text>().text = x + " " + operacao + " " + y;
+        tela.text =  x + " " + operacao + " " + y;
+
+        // gameObject.GetComponentInChildren<Text>().text = x + " " + operacao + " " + y;
 
     }
 
@@ -105,18 +108,28 @@ public class Calculo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hasFinished = false;
         resetQuestion = true;
         criarOperacao();
         // Debug.Log(adicao());
     }
 
+    public void FinishQuestion()
+    {
+        hasFinished = true;
+        tela.text = "";
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if(resetQuestion)
+        if(!hasFinished)
         {
-            criarOperacao();
-            resetQuestion = false;
+            if(resetQuestion)
+            {
+                criarOperacao();
+                resetQuestion = false;
+            }
         }
     }
 }

@@ -10,6 +10,7 @@ public class Posicao : MonoBehaviour
     //Se transpassar 100 y ou menos, teletransporta pra cima
 
     GameObject camera;
+    Calculo c = null;
     void Start()
     {
         camera = GameObject.Find("Main Camera");
@@ -23,12 +24,20 @@ public class Posicao : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.tag == "Bala"){
+            Destroy(other.gameObject);
+        }
+
+
         if (other.gameObject.tag == "barreira"){
+            if(c == null){ c = other.gameObject.GetComponent<Calculo>(); }
+            c.resetQuestion = true;
             other.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             other.gameObject.GetComponent<Collider2D>().enabled = false;
         }
 
         if (other.gameObject.tag == "livro"){
+            c.FinishQuestion();
             other.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             other.gameObject.GetComponent<Collider2D>().enabled = false;
             gameObject.SetActive(false);
@@ -49,7 +58,7 @@ public class Posicao : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x,Random.Range(738,1000),transform.position.z);
 
-        GetComponent<Calculo>().criarOperacao();
+//        GetComponent<Calculo>().criarOperacao();
     } 
     
 }
