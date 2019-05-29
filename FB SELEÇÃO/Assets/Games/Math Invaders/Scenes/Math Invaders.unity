@@ -324,6 +324,7 @@ MonoBehaviour:
   tela: {fileID: 2032362802}
   res: 0
   resetQuestion: 0
+  hasFinished: 0
 --- !u!1 &99147044
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,6 +987,7 @@ MonoBehaviour:
   tela: {fileID: 1888660107}
   res: 0
   resetQuestion: 0
+  hasFinished: 0
 --- !u!1 &538205624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,6 +1289,9 @@ MonoBehaviour:
   - {fileID: 2028736595}
   bala: {fileID: 4453239720224161448, guid: 561076bb144c8294eaf152c15632ccfd, type: 3}
   numero: {fileID: 569299260}
+  acertos: 0
+  TotalDeContas: 8
+  MensagemFinal: {fileID: 1205876096}
 --- !u!1 &788087291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,6 +2523,7 @@ MonoBehaviour:
   tela: {fileID: 2048079253}
   res: 0
   resetQuestion: 0
+  hasFinished: 0
 --- !u!1 &1888660105
 GameObject:
   m_ObjectHideFlags: 0
@@ -2696,7 +2702,7 @@ MonoBehaviour:
   livros: 0
   MensagemFinal: {fileID: 1205876096}
   yMinValue: 780
-  yMaxValue: 1500
+  yMaxValue: 900
   numeroEnemy: 4
   inimigos:
   - {fileID: 1800682495424405531, guid: 54481de6f4aae3e4e95d804dde5efb62, type: 3}
@@ -3234,6 +3240,7 @@ MonoBehaviour:
   tela: {fileID: 863309157}
   res: 0
   resetQuestion: 0
+  hasFinished: 0
 --- !u!1 &2146214401
 GameObject:
   m_ObjectHideFlags: 0

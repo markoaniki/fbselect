@@ -11,23 +11,34 @@ public class InputNumeros : MonoBehaviour
     public GameObject bala = null;
     static public int saveNum = 0;
     public InputField numero;
-    public void SetInputFieldActive (){
+    public int acertos = 0;
+    public int TotalDeContas = 8;
+    int contas;
+    public Canvas MensagemFinal;
+    public void SetInputFieldActive ()
+    {
+        if(Time.timeScale != 0) 
+        {
         EventSystem.current.SetSelectedGameObject(numero.gameObject, null);
         numero.ActivateInputField();  
+        }
     }
     // Start is called before the first frame update
     void Start()
     {
+        contas = TotalDeContas;
         SetInputFieldActive();  
     }
 
     void testCalc()
     {
+        contas--;
         for (int i = 0; i < calculos.Count; i++)
         {
-            if(calculos[i].res == saveNum)
+            if(calculos[i].res == saveNum && !calculos[i].hasFinished)
             {
                 //atirar bala do Transform i
+                acertos++;
                 Instantiate(bala, Shooters[i].position, Quaternion.identity);
                 calculos[i].resetQuestion = true;
                 Debug.Log("OK!");
@@ -39,6 +50,14 @@ public class InputNumeros : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(contas == 0)
+        {
+        //Fim De Jogo
+        Debug.Log("Fim De Jogo");
+        Time.timeScale = 0;
+        MensagemFinal.GetComponent<Canvas>().enabled = true;
+        }
+       
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             string tx = numero.text;

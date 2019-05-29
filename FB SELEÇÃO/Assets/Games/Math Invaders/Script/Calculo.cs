@@ -19,7 +19,7 @@ public class Calculo : MonoBehaviour
 
     public bool resetQuestion;
 
-    bool hasFinished;
+    public bool hasFinished;
 
     int[] primos = {2, 3, 5, 7};
 
