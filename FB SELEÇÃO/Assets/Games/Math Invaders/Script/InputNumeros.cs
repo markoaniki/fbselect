@@ -19,8 +19,8 @@ public class InputNumeros : MonoBehaviour
     {
         if(Time.timeScale != 0) 
         {
-        EventSystem.current.SetSelectedGameObject(numero.gameObject, null);
-        numero.ActivateInputField();  
+            EventSystem.current.SetSelectedGameObject(numero.gameObject, null);
+            numero.ActivateInputField();  
         }
     }
     // Start is called before the first frame update
