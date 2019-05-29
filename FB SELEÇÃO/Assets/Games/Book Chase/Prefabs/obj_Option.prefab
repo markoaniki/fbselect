@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5135466098660794900}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.2, z: 0}
-  m_LocalScale: {x: 0.04, y: 0.065, z: 0.5}
+  m_LocalScale: {x: 0.04, y: 0.075, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4545830958977264539}
   m_RootOrder: 0
@@ -49,7 +49,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3fcc127d9b18a3143822961bd3ace8a4, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,9 +85,9 @@ TextMesh:
   m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 100
-  m_FontStyle: 0
+  m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 0}
+  m_Font: {fileID: 12800000, guid: 3fcc127d9b18a3143822961bd3ace8a4, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answer: 0
+  correct: 0
   audClip: {fileID: 8300000, guid: 3ec6522d485488147a48274edea32efc, type: 3}
   audSauce: {fileID: 8089596988321313878}
 --- !u!82 &8089596988321313878

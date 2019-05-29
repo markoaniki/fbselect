@@ -202,6 +202,7 @@ public class SaveAndLoadQuestions_FA : MonoBehaviour
         }
         else if (S_QuestGen.phase)
         {
+            S_Config.conf.noquest += 1;
             text.text = "DESAFIO " + S_Config.conf.noquest.ToString() + "\n" + act2Question.question;
         }
     }

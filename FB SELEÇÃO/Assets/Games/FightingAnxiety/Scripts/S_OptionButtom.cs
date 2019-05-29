@@ -14,6 +14,9 @@ public class S_OptionButtom : MonoBehaviour
     [Header("Button Animation")]
     public Image img;
     public SpriteRenderer spRen;
+    [Header("Player Trigger Animation")]
+    public GameObject player;
+    public bool isAttacking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -39,27 +42,33 @@ public class S_OptionButtom : MonoBehaviour
                 break;
 
         }
-        text.text = ac + value;
+        text.text = /*ac +*/ value;
     }
 
     public void ButtonInteract()
     {
         Debug.Log(value.ToString());
-        int latest = S_QuestGen.qg.questions.Count - 1;
-        if (correct)
+
+        if (S_StateMachine.sm.phaseState == S_StateMachine.PlayerSM.WAITING_ANSWER)
         {
-            Debug.Log(SaveAndLoadQuestions_FA.sad.actQuestion.options[0].ToString());
-            if (S_Config.conf == null)
+            int latest = S_QuestGen.qg.questions.Count - 1;
+            if (correct)
             {
-                Debug.Log("is null");
-                return;
+                Debug.Log(SaveAndLoadQuestions_FA.sad.actQuestion.options[0].ToString());
+                if (S_Config.conf == null)
+                {
+                    Debug.Log("is null");
+                    return;
+                }
+                S_Config.conf.scores += 0.33f;
+                Debug.Log(S_Config.conf.scores.ToString());
             }
-            S_Config.conf.scores += 0.33f;
-            Debug.Log(S_Config.conf.scores.ToString());
-        } else
-        {
-            S_QuestGen.phase = false;
+            else
+            {
+                S_QuestGen.phase = false;
+            }
+
+            S_StateMachine.sm.phaseState = S_StateMachine.PlayerSM.ANIMATION_PHASE1;
         }
-        S_Player.play.Destroyer();
     }
 }

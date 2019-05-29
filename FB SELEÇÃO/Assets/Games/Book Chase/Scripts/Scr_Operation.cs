@@ -17,7 +17,7 @@ public class Scr_Operation
     public Scr_Operation(List<string> options, string question)
     {
         this.options = options;
-        this.question = question;
+        this.question = "Questão " + Scr_OptionGen.numQuestions.ToString() + ": " + question;
     }
     public Scr_Operation(float first, float second, int operation)
     {

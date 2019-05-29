@@ -6,13 +6,16 @@ public class S_Config : MonoBehaviour
 {
     // Variables
         // Number of the question
-    public int noquest = 20;
+    public int noquest = 0;
+    public int maxquest = 10;
         // is Integer
     public bool isInteger = true;
         // Game Time
     private float gtime = 0;
         // Scores
     public float scores = 0;
+        //is Attacking
+    public bool isAttacking = false;
 
     // Singleton
     public static S_Config conf = null;

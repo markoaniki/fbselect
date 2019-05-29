@@ -9,7 +9,7 @@ public class Scr_OptionGen : MonoBehaviour
     public GameObject sphere = null;
     public float errorMargin = 10f;
     public float minRadius = 2f;
-    public int numQuestions = 0;
+    public static int numQuestions = 0;
     public int varMargin = 5;
     public int minVarMar = 3;
     public int maxOfLoops = 60;
@@ -39,6 +39,7 @@ public class Scr_OptionGen : MonoBehaviour
             if (ansList.Count == 0)
             {
                 Scr_OperationGen.ops.question = "Questão " + numQuestions.ToString() + ":";
+                numQuestions++;
                 Scr_OperationGen.ops.CreateOperation();
                 List<string> answers = new List<string>();
                 Scr_GameSave.sav.questList.Add(new Scr_QuestSave(Scr_GameSave.sav.register, Scr_Config.conf.scrsPQ));
@@ -68,6 +69,7 @@ public class Scr_OptionGen : MonoBehaviour
                     Vector3 vec = SpawnPosition(oldPos);
                     oldPos.Add(vec);
                     GameObject temp = Object.Instantiate(sphere, vec, Quaternion.identity);
+                    temp.GetComponent<S_OptionButtom>().player = this.gameObject;
                     ansList.Add(temp);
                     Scr_Option component = temp.GetComponent<Scr_Option>();
                     int spherePos = Random.Range(0, answers.Count);

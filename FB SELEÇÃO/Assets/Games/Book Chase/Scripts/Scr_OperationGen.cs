@@ -12,7 +12,7 @@ public class Scr_OperationGen : MonoBehaviour
     public Scr_Operation answer = null;
     public GameObject textGo = null;
     private Text text = null;
-    public int numOfOps = 4;
+    public int numOfOps = 10;
     public float chanceDecay = 2f;
     private List<float> percs = new List<float>();
     public string question;
