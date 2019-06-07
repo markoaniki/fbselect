@@ -117,6 +117,5 @@ public class SaveFile
         sav_gTimes = time;
         sav_scorer = score;
         sav_register = register;
-
     }
 }

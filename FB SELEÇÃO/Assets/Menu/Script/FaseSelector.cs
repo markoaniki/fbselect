@@ -144,6 +144,7 @@ public class FaseSelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Time.timeScale = 1;
         Decider();
         Mover();
     }
