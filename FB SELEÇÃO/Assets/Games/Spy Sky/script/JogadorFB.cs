@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class JogadorFB2 : MonoBehaviour
+public class JogadorFB : MonoBehaviour
 {
     public KeyCode Up = KeyCode.UpArrow;
     public KeyCode Down = KeyCode.DownArrow;
@@ -17,10 +17,10 @@ public class JogadorFB2 : MonoBehaviour
     public float speed = 1.0f;
     public Text pontuacao;
     public Text pontuacaoNegativa;
-    private int pontos,negativo;
+    private int pontos,negativo,itens;
     public Text Final;
     public int Fim,som;
-    public int PontosFim;
+    public int itensFim;
     public float tempo, somSobeOn = 0, somSobeOff = 0;
     private Quaternion rotIni;
     public float rotLimit = 1;
@@ -42,11 +42,12 @@ public class JogadorFB2 : MonoBehaviour
     {
 
 
-        //parar criação de enemigo quando aparecer que você venceu
+        //parar criação de inimigo quando aparecer que você venceu
         gameengine = GameObject.FindGameObjectWithTag("MainCamera");
  
         pontos = 0;
-        negativo = 0;       
+        negativo = 0;
+        itens = 0;
 
         //criação da lista com as palavras.
         foreach(GameObject ini in GameEngine.GE.Inimigo)
@@ -82,15 +83,17 @@ public class JogadorFB2 : MonoBehaviour
         }
 
         //pontuação
-        if (negativo != PontosFim)
+        if (itens != itensFim)
         {
             teste = palavraAtual;
             if (collision.gameObject.CompareTag(palavraAtual))
             {
                 AtualizarAtual();
-                // pontos = pontos + 1;
-                pontos++;
-                pontuacao.text = "Pontuação:  " + pontos;
+                pontos = pontos + 1;
+                itens = itens + 1;
+
+                //para aparecer o texto da pontuação
+                //pontuacao.text = "Pontuação:  " + pontos;
                 
                 
                 while (palavraAtual == teste)
@@ -105,19 +108,20 @@ public class JogadorFB2 : MonoBehaviour
                                     
                 return;
             }
-            // else
-            // {
-            //     //marcação dos ERROS cometidos
-            //     negativo = negativo + 100;
-                
-            //     return;
-            // }
+            else
+            {
+                //marcação dos ERROS cometidos
+                negativo = negativo + 1;
+                itens = itens + 1;
+                AtualizarAtual();
+                return;
+            }
         }
     }
 
     void FimDeJogo()
     {
-        if (negativo == PontosFim)
+        if (itens == Fim)
         {
             if (som == 0)
             {
@@ -125,7 +129,8 @@ public class JogadorFB2 : MonoBehaviour
                 som++;
             }
             gameengine.SendMessage("Acabou");
-            Final.text = "Fim de jogo! Pressione voltar.";
+            Final.text = "Parabéns você terminou!!";
+            //Final.text = "Parabéns você fez:\n" + pontos + " pontos";
 
             //verificação se apertou a tecla enter para voltar ao inicio
             if (Input.inputString != "")
@@ -138,7 +143,10 @@ public class JogadorFB2 : MonoBehaviour
                 }
             
             }
-            
+            Debug.Log("Certo:");
+            Debug.Log(pontos);
+            Debug.Log("Erradas:");
+            Debug.Log(negativo);
         }
     }
 
