@@ -26,7 +26,7 @@ public class AddStudent : MonoBehaviour
     // Start is called before the first frame update
     public void OnClick()
     {
-        Debug.Log("Funcionou carai: " + Nome.text + Dia.options[Dia.value].text);
+        Debug.Log("Funcionou: " + Nome.text + Dia.options[Dia.value].text);
 
         if(Nome.text != nada && EscolaAntiga.text != nada && Serie.value != 0){
             feedbackmsg.CrossFadeAlpha(100f, 0f, false);
@@ -35,8 +35,12 @@ public class AddStudent : MonoBehaviour
             feedbackmsg.CrossFadeAlpha(0f, 2f, false);
             string BirthData = Dia.options[Dia.value].text + "/" + Mes.options[Mes.value].text + "/" + Ano.options[Ano.value].text;
             SaveManager.AddStudent(Nome.text,BirthData,EscolaAntiga.text,Serie.options[Serie.value].text,GenerateQuestions());
-            Nome.text = nada;
-            EscolaAntiga.text = nada;
+            Nome.text = "";
+            EscolaAntiga.text = "";
+            Dia.value = 0;
+            Mes.value = 0;
+            Ano.value = 0;
+            Serie.value = 0;
         } else
         {
             feedbackmsg.CrossFadeAlpha(100f, 0f, false);

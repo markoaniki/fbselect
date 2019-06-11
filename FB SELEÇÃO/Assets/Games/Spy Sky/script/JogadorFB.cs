@@ -17,7 +17,8 @@ public class JogadorFB : MonoBehaviour
     public float speed = 1.0f;
     public Text pontuacao;
     public Text pontuacaoNegativa;
-    private int pontos,negativo,itens;
+    public int pontos,negativo,itens;
+    public InputField acertos, total;
     public Text Final;
     public int Fim,som;
     public int itensFim;
