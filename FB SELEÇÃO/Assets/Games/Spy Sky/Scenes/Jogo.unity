@@ -987,11 +987,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1489331677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9a4ed6ab457f6b4fb2d5f4b65082a64, type: 3}
+  m_Script: {fileID: 11500000, guid: 20a0392cb950c93479c28316e907daba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   retPath: Menu/Scenes/MapaDoJogo
-  MapPath: Menu/Scenes/MapaDoJogo
 --- !u!114 &1489331680
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class JogadorFB : MonoBehaviour
 {
+    public static JogadorFB jFB = null;
     public KeyCode Up = KeyCode.UpArrow;
     public KeyCode Down = KeyCode.DownArrow;
 
@@ -42,7 +43,7 @@ public class JogadorFB : MonoBehaviour
     void Start()
     {
 
-
+        if(jFB == null){jFB = this;}
         //parar criação de inimigo quando aparecer que você venceu
         gameengine = GameObject.FindGameObjectWithTag("MainCamera");
  
