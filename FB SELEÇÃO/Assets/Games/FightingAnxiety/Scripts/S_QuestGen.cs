@@ -27,8 +27,8 @@ public class S_QuestGen : MonoBehaviour
     // Generate Question
     public void GenerateQuestion()
     {
-        SaveAndLoadQuestions_FA.sad.setRdmQuestion();
-        questions.Add(SaveAndLoadQuestions_FA.sad.actQuestion);
-        SaveAndLoadQuestions_FA.sad.printScreenQuestion();
+        FAA_SnL.sad.setRdmQuestion();
+        questions.Add(FAA_SnL.sad.actQuestion);
+        FAA_SnL.sad.printScreenQuestion();
     }
 }

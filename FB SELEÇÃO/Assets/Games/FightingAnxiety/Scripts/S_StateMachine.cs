@@ -15,6 +15,9 @@ public class S_StateMachine : MonoBehaviour
         ANIMATION_PHASE1,
         ANIMATION_DAMAGE,
         ANIMATION_PHASE3,
+        ENEMY_PHASE1,
+        ENEMY_DAMAGE,
+        ENEMY_PHASE3,
         END
     }
 
@@ -86,7 +89,7 @@ public class S_StateMachine : MonoBehaviour
                 else
                 {
                     // Phase Change
-                    phaseState = PlayerSM.END;
+                    phaseState = PlayerSM.ENEMY_PHASE1;
                 }
                 
                 break;

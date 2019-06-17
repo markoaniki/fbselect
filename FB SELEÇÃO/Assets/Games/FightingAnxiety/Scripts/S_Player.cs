@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class S_Player : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class S_Player : MonoBehaviour
     public GameObject canvas;
     public GameObject obj;
     public string toCall;
+    public Image img;
+    
 
     // Start and Update
     void Start()
@@ -23,6 +26,7 @@ public class S_Player : MonoBehaviour
     }
     void Update()
     {
+        img.transform.SetAsLastSibling();
     }
 
     // Spawner
@@ -36,9 +40,9 @@ public class S_Player : MonoBehaviour
         bool locker = false;
 
         // List of possible answers
-        for (int i = 0; i < SaveAndLoadQuestions_FA.sad.actQuestion.options.Count; i++)
+        for (int i = 0; i < FAA_SnL.sad.actQuestion.options.Count; i++)
         {
-            answers.Add(SaveAndLoadQuestions_FA.sad.actQuestion.options[i]);
+            answers.Add(FAA_SnL.sad.actQuestion.options[i]);
         }
         
         // Object position List

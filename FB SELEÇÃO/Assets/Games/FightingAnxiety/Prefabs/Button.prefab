@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.9, y: -1.1}
-  m_SizeDelta: {x: 145.14, y: 135.95}
+  m_AnchoredPosition: {x: 3.869995, y: -1.6499939}
+  m_SizeDelta: {x: 73.36, y: 161.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &939620639070970025
 CanvasRenderer:
@@ -119,8 +119,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -8.599976, y: 0.8999939}
-  m_SizeDelta: {x: -727.2, y: -739.1}
+  m_AnchoredPosition: {x: -8.599976, y: 2.7550507}
+  m_SizeDelta: {x: -727.2, y: -735.39014}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &939620640185743327
 CanvasRenderer:
@@ -279,6 +279,8 @@ MonoBehaviour:
   correct: 0
   img: {fileID: 939620640185743324}
   spRen: {fileID: 8587419996947705378}
+  player: {fileID: 0}
+  isAttacking: 0
 --- !u!95 &2732136142425770946
 Animator:
   serializedVersion: 3

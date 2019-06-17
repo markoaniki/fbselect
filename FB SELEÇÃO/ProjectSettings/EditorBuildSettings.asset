@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Games/Book Chase/Scenes/BookChaseTestRoom.unity
     guid: e00186c3f97ed4e409bc9f7cf7cfdac5
+  - enabled: 1
+    path: Assets/Games/FightingAnxiety/Scenes/testROOM_FA.unity
+    guid: 98d96992429cc924994d863c45c8161d
+  - enabled: 1
+    path: Assets/Games/FightingAnxiety/Scenes/EndGame_FA.unity
+    guid: 5dd5e700860939a46a1a74e677f4722a
+  - enabled: 1
+    path: Assets/Games/FightingAnxiety/Scenes/TitleScreen_FA.unity
+    guid: a9003c4f814b269449639eb92e3e4ad6
   m_configObjects: {}

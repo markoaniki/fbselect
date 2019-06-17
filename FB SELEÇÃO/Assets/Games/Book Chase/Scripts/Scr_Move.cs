@@ -7,7 +7,7 @@ public class Scr_Move : MonoBehaviour
     // Variables
     private Vector3 dir = new Vector3(0, 0, 0);
     private Vector3 pos;
-    public Animator animation;
+    public Animator anim;
     public float cool = 1f;
     public GameObject minXZ;
     public GameObject maxXZ;
@@ -21,7 +21,7 @@ public class Scr_Move : MonoBehaviour
     void Start()
     {
         audSauce.clip = audClip;
-        animation = GetComponentInChildren<Animator>();
+        anim = GetComponentInChildren<Animator>();
         minPosXZ = minXZ.transform.position;
         maxPosXZ = maxXZ.transform.position;
     }
@@ -30,21 +30,21 @@ public class Scr_Move : MonoBehaviour
         pos = transform.position;
 
         // Running animation controller
-        if (animation.GetInteger("mDir") == 4)
+        if (anim.GetInteger("mDir") == 4)
         {
             transform.rotation = new Quaternion(0, 0, 180f, 0);
         }
-        else if (animation.GetInteger("mDir") == 3)
+        else if (anim.GetInteger("mDir") == 3)
         {
             transform.rotation = new Quaternion(0, 0, 0, 0);
         }
 
         if (dir == new Vector3(0, 0, 0))
         {
-            animation.SetInteger("mDir", 0);
+            anim.SetInteger("mDir", 0);
         }
 
-        dir = Scr_Config.conf.Move(dir, animation);
+        dir = Scr_Config.conf.Move(dir, anim);
 
         pos = Vector3.Normalize(dir) * Scr_Config.conf.speed * Time.deltaTime;
         pos = CorrectPosition(transform.position + pos);
@@ -68,26 +68,26 @@ public class Scr_Move : MonoBehaviour
         if (newPos.x < minPosXZ.x)
         {
             onWall = true;
-            animation.SetInteger("mDir", 0);
+            anim.SetInteger("mDir", 0);
             newPos.x = minPosXZ.x;
         }
         else if (newPos.x > maxPosXZ.x)
         {
             onWall = true;
-            animation.SetInteger("mDir", 0);
+            anim.SetInteger("mDir", 0);
             newPos.x = maxPosXZ.x;
         }
 
         if (newPos.z < minPosXZ.z)
         {
             onWall = true;
-            animation.SetInteger("mDir", 0);
+            anim.SetInteger("mDir", 0);
             newPos.z = minPosXZ.z;
         }
         else if (newPos.z > maxPosXZ.z)
         {
             onWall = true;
-            animation.SetInteger("mDir", 0);
+            anim.SetInteger("mDir", 0);
             newPos.z = maxPosXZ.z;
         }
 
@@ -97,7 +97,7 @@ public class Scr_Move : MonoBehaviour
     // OnCollision
     private void OnCollisionEnter(Collision collision)
     {
-        animation.SetInteger("mDir", 0);
+        anim.SetInteger("mDir", 0);
         LogSave.ls.SaveLog("OnCollisionEnter of Scr_Move Executado | ");
         dir = new Vector3(0, 0, 0);
         cool = 1f;

@@ -69,7 +69,6 @@ public class Scr_OptionGen : MonoBehaviour
                     Vector3 vec = SpawnPosition(oldPos);
                     oldPos.Add(vec);
                     GameObject temp = Object.Instantiate(sphere, vec, Quaternion.identity);
-                    temp.GetComponent<S_OptionButtom>().player = this.gameObject;
                     ansList.Add(temp);
                     Scr_Option component = temp.GetComponent<Scr_Option>();
                     int spherePos = Random.Range(0, answers.Count);
@@ -143,7 +142,7 @@ public class Scr_OptionGen : MonoBehaviour
     }
 
     // Check if the Distance is Valid
-    bool isDistanceValid(Vector3 spawnPos, List<Vector3> oldPos)
+    public bool isDistanceValid(Vector3 spawnPos, List<Vector3> oldPos)
     {
         foreach (Vector3 pos in oldPos)
         {

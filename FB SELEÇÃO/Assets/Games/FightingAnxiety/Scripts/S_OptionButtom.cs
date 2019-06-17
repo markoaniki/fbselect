@@ -11,9 +11,11 @@ public class S_OptionButtom : MonoBehaviour
     public int action = 0;
     private string ac = "null";
     public bool correct = false;
+
     [Header("Button Animation")]
     public Image img;
     public SpriteRenderer spRen;
+
     [Header("Player Trigger Animation")]
     public GameObject player;
     public bool isAttacking = false;
@@ -54,13 +56,13 @@ public class S_OptionButtom : MonoBehaviour
             int latest = S_QuestGen.qg.questions.Count - 1;
             if (correct)
             {
-                Debug.Log(SaveAndLoadQuestions_FA.sad.actQuestion.options[0].ToString());
+                Debug.Log(FAA_SnL.sad.actQuestion.options[0].ToString());
                 if (S_Config.conf == null)
                 {
                     Debug.Log("is null");
                     return;
                 }
-                S_Config.conf.scores += 0.33f;
+                S_Config.conf.scores += 1f;
                 Debug.Log(S_Config.conf.scores.ToString());
             }
             else
