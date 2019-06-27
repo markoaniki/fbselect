@@ -142,7 +142,7 @@ public class Scr_OptionGen : MonoBehaviour
     }
 
     // Check if the Distance is Valid
-    bool isDistanceValid(Vector3 spawnPos, List<Vector3> oldPos)
+    public bool isDistanceValid(Vector3 spawnPos, List<Vector3> oldPos)
     {
         foreach (Vector3 pos in oldPos)
         {
