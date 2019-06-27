@@ -88,6 +88,7 @@ public class S_Player : MonoBehaviour
         // END GAME
         if (S_Config.conf.noquest == S_Config.conf.maxquest)
         {
+            S_Config.conf.FAA_SaveFile();
             SceneManager.LoadScene(toCall, LoadSceneMode.Single);
         }
 

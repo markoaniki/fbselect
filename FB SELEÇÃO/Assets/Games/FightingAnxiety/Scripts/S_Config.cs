@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class S_Config : MonoBehaviour
@@ -15,6 +16,7 @@ public class S_Config : MonoBehaviour
     public bool isAttacking = false;
     [Header("Game Settings")]
     private float gtime = 0;
+    public int idCode = 1510518;
 
     // Singleton
     public static S_Config conf = null;
@@ -51,6 +53,15 @@ public class S_Config : MonoBehaviour
         } else return (UnityEngine.Random.Range(min, max));
     }
 
+    // SaveFile
+    public void FAA_SaveFile()
+    {
+        FAA_SavedInfo si = new FAA_SavedInfo(gtime, scores, maxquest, noquest, idCode);
+        string json = JsonUtility.ToJson(si);
+        Directory.CreateDirectory(Application.dataPath + "\\Saves\\" + idCode.ToString() + "\\FightingAgainstAnsiety");
+        File.WriteAllText(Application.dataPath + "\\Saves\\" + idCode.ToString() + "\\FightingAgainstAnsiety\\" + "FAA_SaveFile.json", json);
+    }
+
 }
 
 [Serializable]
@@ -60,4 +71,14 @@ public class FAA_SavedInfo
     public float scores;
     public int maxQuestion;
     public int numberOfQuestions;
+    public int ID;
+
+    public FAA_SavedInfo(float time, float scores, int maxQuestion, int numberOfQuestions, int ID)
+    {
+        this.time = time;
+        this.scores = scores;
+        this.maxQuestion = maxQuestion;
+        this.numberOfQuestions = numberOfQuestions;
+        this.ID = ID;
+    }
 }
