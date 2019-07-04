@@ -240,7 +240,7 @@ MonoBehaviour:
   automatic: 0
   text: {fileID: 62261835}
   buttons: []
-  PathR: Assets/Global_Assets/Resources/QuestionsR_AF.txt
+  PathR: Assets/Global_Assets/Resources/QuestionsR_5o_AF.txt
   splitchar: 124
   PathM: Assets/Resources/QuestionsM.txt
   maxValue: 50
@@ -657,11 +657,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c694ecea11db2d649bbace9ef89bd5bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noquest: 0
   maxquest: 10
-  isInteger: 1
+  noquest: 0
   scores: 0
+  isInteger: 1
   isAttacking: 0
+  idCode: 1510518
 --- !u!1 &719343045
 GameObject:
   m_ObjectHideFlags: 0

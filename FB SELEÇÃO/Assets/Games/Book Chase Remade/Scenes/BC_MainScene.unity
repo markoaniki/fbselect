@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   automatic: 0
   buttons: []
-  path_R: Assets/Global_Assets/Resources/QuestionsR_BC.txt
+  path_R: Assets/Global_Assets/Resources/QuestionsR_5o_BC.txt
   splitcher: 124
   path_M: 
   maxValue: 50
@@ -3489,7 +3489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1bf7f4c9bc0bf849a36489dbd77cb22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animation: {fileID: 649662878}
+  anim: {fileID: 0}
   wallColider: 0
   minXZ: {fileID: 1418499878}
   maxXZ: {fileID: 1834039714}

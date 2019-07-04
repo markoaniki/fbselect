@@ -1,11 +1,9 @@
 ﻿Equação igual ,opção Correta, opção2,...,opçãpN;
-Qual operação ocorre por ultimo? 10 ÷ 5 + 25 * 2 |soma|divisão|multiplicação|subitração
 A decomposição de 490?|4 centenas + 9 dezenas|4 unidades de milhar + 9 centenas|9 dezenas + 4 centenas|9 unidades de milhar + 4 centenas 
 Qual o sucessor de 5 + 2 + 3 + 7  ?|18|17|16|19
 O número 49.929 possui: |5 ordens e 2 classes|5 ordens e 3 classes|2 ordens e 5 classes|4 ordens e 2 classes
 Qual o antecessor de 1/2 + 3/2 ?|6/2|4/2|5/2|7/2
 se X = 2/3 de 12, então X = ? |8|3|9|4
-[50 – (3 + 2)] ÷ 5 = ? |9|5|2|10
-(24 ÷ 4 + 4) ÷ 10 = ? |1|10|5|2
-->como fica a fração 5/20 por extenso? |cinco vinte avos|vinte quintos|cinco sob vinte|cinco sobre vinte
-se X = 4/5 de 25, então X = ? |20|15|25|10
+O Número 525 possui: |3 ordens e 1 classe|1 ordem e 3 classes|5 ordens e 2 classes|3 ordens e 2 classes
+A fração 5/20 por extenso fica? |cinco vinte avos|vinte quintos|cinco sob vinte|cinco sobre vinte
+Quanto é sete catorze avos? |7/14|14/28|5/10|1/2
