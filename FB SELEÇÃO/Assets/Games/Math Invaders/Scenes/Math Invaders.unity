@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   min: 0
-  max: 50
+  max: 20
   tela: {fileID: 2032362802}
   res: 0
   resetQuestion: 0
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   min: 0
-  max: 50
+  max: 20
   tela: {fileID: 1888660107}
   res: 0
   resetQuestion: 0
@@ -2834,7 +2834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   min: 0
-  max: 50
+  max: 20
   tela: {fileID: 2048079253}
   res: 0
   resetQuestion: 0
@@ -3551,7 +3551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   min: 0
-  max: 50
+  max: 20
   tela: {fileID: 863309157}
   res: 0
   resetQuestion: 0

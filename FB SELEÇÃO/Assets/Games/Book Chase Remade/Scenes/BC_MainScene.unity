@@ -3489,7 +3489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1bf7f4c9bc0bf849a36489dbd77cb22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animation: {fileID: 649662878}
+  anim: {fileID: 0}
   wallColider: 0
   minXZ: {fileID: 1418499878}
   maxXZ: {fileID: 1834039714}
@@ -3582,7 +3582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
-  toCall: 
+  toCall: EndScreen_BC
 --- !u!114 &1826440947
 MonoBehaviour:
   m_ObjectHideFlags: 0

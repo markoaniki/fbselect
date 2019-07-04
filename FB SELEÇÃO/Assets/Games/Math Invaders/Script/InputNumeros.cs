@@ -15,6 +15,8 @@ public class InputNumeros : MonoBehaviour
     public int TotalDeContas = 8;
     int contas;
     public Canvas MensagemFinal;
+    int r;
+    int r2;
     public void SetInputFieldActive ()
     {
         if(Time.timeScale != 0) 
@@ -41,9 +43,21 @@ public class InputNumeros : MonoBehaviour
                 acertos++;
                 Instantiate(bala, Shooters[i].position, Quaternion.identity);
                 calculos[i].resetQuestion = true;
-                Debug.Log("OK!");
+                Debug.Log("OK! ACERTOU!");
+                r2=0;
                 return;
+            }else{
+                r2++;
             }
+        }        
+        if(r2==4){
+            r=Random.Range(0,4);
+            Debug.Log(r);
+            Instantiate(bala, Shooters[r].position, Quaternion.identity);
+            calculos[r].resetQuestion = true;
+            Debug.Log("OK! ERROU!");
+            r2=0;
+            return;
         }
     }
 
@@ -54,6 +68,7 @@ public class InputNumeros : MonoBehaviour
         {
         //Fim De Jogo
         Debug.Log("Fim De Jogo");
+        Debug.Log(acertos);
         Time.timeScale = 0;
         MensagemFinal.GetComponent<Canvas>().enabled = true;
         }

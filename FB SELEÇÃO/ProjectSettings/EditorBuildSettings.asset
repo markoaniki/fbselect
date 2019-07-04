@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Games/Spy Sky/Scenes/Jogo.unity
     guid: 28a4b3b395a4a0b4a808dc9ed3b57416
+  - enabled: 1
+    path: Assets/Games/Book Chase Remade/Scenes/BC_MainScene.unity
+    guid: 6cdd0bde813fa75488be8bb3ee1102ce
   m_configObjects: {}

@@ -592,7 +592,7 @@ MonoBehaviour:
   updown: 0
   scaleControl: 0.2
   speedControl: 2.5
-  toCall: BookChaseTestRoom
+  toCall: BC_MainScene
   audClip: {fileID: 8300000, guid: 4b22b28c7aaba2c4580766b140cae65a, type: 3}
   audSauce: {fileID: 1597623763}
 --- !u!82 &1597623763
