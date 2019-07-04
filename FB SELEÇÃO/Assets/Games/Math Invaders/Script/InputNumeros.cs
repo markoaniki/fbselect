@@ -50,9 +50,10 @@ public class InputNumeros : MonoBehaviour
                 r2++;
             }
         }        
-        if(r2==4){
-            r=Random.Range(0,4);
-            Debug.Log(r);
+        //Se der bug, poderá ser o calculos.Count que esteja randomizando de 0 à 4, verifique!!!
+        if(r2==calculos.Count){
+            r=Random.Range(0,calculos.Count);
+            Debug.Log(calculos.Count);
             Instantiate(bala, Shooters[r].position, Quaternion.identity);
             calculos[r].resetQuestion = true;
             Debug.Log("OK! ERROU!");

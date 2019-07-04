@@ -1,11 +1,6 @@
 ﻿Equação igual ,opção Correta, opção2,...,opçãpN;
-10 ÷ 5 + 25 * 2 = ?|52|54|50|48
-se (3 + X) * 2 - 1 = 9, então X = ? |2|5|4|1 
-(16 ÷ 4) * 2 - 7 = ?|1|5|7|3
-se X = 2/3 de 12, então X = ? |8|3|9|4
-[50 – (3 + 2)] ÷ 5 = ? |9|5|2|4
-(24 ÷ 4 + 4) ÷ 10 = ? |1|10|5|2
-se X = 4/5 de 25, então X = ? |20|15|25|10
-(8 – 5 * 3 + 1) ÷ 4 = ? |2|1|3|5
-quantas ordens possui o número 45.929? |5|2|4|3
-quantas classes possui o número 782.645? |2|6|3|4
+Qual o sucessor de 10 x 2 ?|21|19|18|22
+Qual o antecessor de 8 x 3 ?|23|24|25|26 
+Qual o sucessor de 10 ÷ 2 ?|6|5|7|4
+Qual o antecessor de 1/2 + 3/2 ?|6/2|4/2|5/2|7/2
+Qual o sucessor de 5 + 2 + 3 + 7  ?|18|17|16|19
