@@ -6,10 +6,10 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SaveAndLoadQuestions_FA : MonoBehaviour
+public class FAA_SnL : MonoBehaviour
 {
     // Serializable 
-    public static SaveAndLoadQuestions_FA sad = null;
+    public static FAA_SnL sad = null;
 
     [SerializeField]
     private List<Question> Questions = new List<Question>();

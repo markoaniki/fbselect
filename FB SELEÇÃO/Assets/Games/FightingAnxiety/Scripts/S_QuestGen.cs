@@ -27,18 +27,8 @@ public class S_QuestGen : MonoBehaviour
     // Generate Question
     public void GenerateQuestion()
     {
-        /*if (phase == false)
-        {*/
-            SaveAndLoadQuestions_FA.sad.setRdmQuestion();
-            questions.Add(SaveAndLoadQuestions_FA.sad.actQuestion);
-            SaveAndLoadQuestions_FA.sad.printScreenQuestion();
-        /*}
-        else
-        {
-            questions.Add(SaveAndLoadQuestions_FA.sad.act2Question);
-            SaveAndLoadQuestions_FA.sad.printScreenQuestion();
-        }
-        phase = !phase;
-        */S_Player.play.isFree = false;
+        FAA_SnL.sad.setRdmQuestion();
+        questions.Add(FAA_SnL.sad.actQuestion);
+        FAA_SnL.sad.printScreenQuestion();
     }
 }

@@ -7,6 +7,7 @@ public class MudarCena1 : MonoBehaviour
 {
     public void MudarCenaParaMenu()
     {
+        SaveManager.InQuestion = false;
         SceneManager.LoadScene("Menu");
     }
 }

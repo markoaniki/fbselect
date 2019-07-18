@@ -110,6 +110,7 @@ public class FaseSelector : MonoBehaviour
             {
                 isInMainScene = false;
                 SaveManager.estudanteLogado.SetQuestion(thisIndex + 1); 
+                SaveManager.InQuestion = true;
                 SceneManager.LoadScene(scenePaths[thisIndex], LoadSceneMode.Single);
 
                 isInMainScene = false;

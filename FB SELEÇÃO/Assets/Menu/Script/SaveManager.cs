@@ -10,6 +10,10 @@ public class SaveManager : MonoBehaviour
 
     static public Student estudanteLogado = null;
 
+    static public float TimeTest = 0;
+
+    static public bool InQuestion = false;
+
     private void Awake()
     {
         DontDestroyOnLoad(this);
@@ -23,6 +27,15 @@ public class SaveManager : MonoBehaviour
         SceneManager.LoadScene(scenePATH, LoadSceneMode.Single);
     }
 
+    void Update()
+    {
+        TimeTest += Time.deltaTime;
+    }
+
+    public static void ResetTime()
+    {
+        TimeTest = estudanteLogado.Time;
+    }
     public static void AddStudent(string name, string birthDate, string oldSchool, string grade, List<int> questions)
     {
         Students.Add(new Student(name, birthDate, oldSchool, grade, questions));

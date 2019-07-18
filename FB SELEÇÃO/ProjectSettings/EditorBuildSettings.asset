@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Menu/Scenes/InicializarBanco.unity
+    guid: 68c440de599055541894211de79939d6
+  - enabled: 1
     path: Assets/Menu/Scenes/Menu.unity
     guid: fededd55b7a71534593743dd5cdc8d1d
   - enabled: 1
@@ -14,9 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UCScene/UnderConstruction.unity
     guid: 0959ffec35446fe4eafb57075356e6fc
-  - enabled: 1
-    path: Assets/Menu/Scenes/InicializarBanco.unity
-    guid: 68c440de599055541894211de79939d6
   - enabled: 1
     path: Assets/Games/Math Invaders/Scenes/Math Invaders.unity
     guid: cc91907c1ccb199458766eb4ce0be373

@@ -17,6 +17,8 @@ public class Student
 
     public Questao inProgressQuestion { get; set; }
 
+    public float Time{get; set;} = 0;
+
     private List<Questao> GenerateQuestions(List<int> questions)
     {
         List<Questao> qs = new List<Questao>();
