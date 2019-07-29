@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 1527310451803159826}
   - component: {fileID: 821601151698725222}
   - component: {fileID: 9186220519510376308}
-  - component: {fileID: 8197702389761279844}
+  - component: {fileID: 7245541651083852122}
+  - component: {fileID: 1510706386326938578}
+  - component: {fileID: 3442923793303312113}
   m_Layer: 0
   m_Name: OptionFace
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612985201299108725}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 7505744365363221629}
@@ -79,8 +81,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8197702389761279844
-MeshCollider:
+--- !u!65 &7245541651083852122
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -89,10 +91,40 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 4.23, z: 10.000002}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1510706386326938578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612985201299108725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28b850bacaced542b15ed5562e9e03b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origP: {x: 0, y: 0, z: 0}
+  origPos: {x: 0, y: 0, z: 0}
+  father: 
+--- !u!54 &3442923793303312113
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612985201299108725}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
 --- !u!1 &8927209924363790455
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +138,7 @@ GameObject:
   - component: {fileID: 1692369224344326393}
   - component: {fileID: 5693769305844631646}
   - component: {fileID: 4101939015475348273}
+  - component: {fileID: 703990140859067294}
   m_Layer: 0
   m_Name: TextMesh
   m_TagString: Untagged
@@ -300,3 +333,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   m_maskType: 0
+--- !u!64 &703990140859067294
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8927209924363790455}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}

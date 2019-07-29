@@ -9,7 +9,7 @@ public class S_OptionButtom : MonoBehaviour
     public string value;
     public Text text;
     public int action = 0;
-    private string ac = "null";
+    private string ac = "";
     public bool correct = false;
 
     [Header("Button Animation")]

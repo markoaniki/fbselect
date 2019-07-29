@@ -46,7 +46,8 @@ public class TC_TMController : MonoBehaviour
         GameObject temp;
         for (int i = 0; i < tmpl.Count; i++)
         {
-            temp = Object.Instantiate(optPrefab, optSpawn[i].transform);
+            temp = Instantiate(optPrefab, optSpawn[i].transform);
+            temp.transform.parent = null;
             temp.GetComponentInChildren<TextMeshPro>().text = tmpl[i].text;
             temp.GetComponentInChildren<TextMeshPro>().transform.rotation = tmpl[i].transform.localRotation;
         }
