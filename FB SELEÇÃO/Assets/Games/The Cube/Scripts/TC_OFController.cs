@@ -28,13 +28,13 @@ public class TC_OFController : MonoBehaviour
     }
     void Update()
     {
-        MouseTest();
+        if(TC_GameStateMachine.gsm.ags == TC_GameStateMachine.GameSM.WAITING_ANSWER) MouseTest();
     }
 
     void MouseTest()
     {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
+        
         if (Input.GetMouseButtonDown(0))
         {
             if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.Equals(transform.gameObject))

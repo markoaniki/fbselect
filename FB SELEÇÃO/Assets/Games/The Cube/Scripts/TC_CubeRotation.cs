@@ -24,37 +24,39 @@ public class TC_CubeRotation : MonoBehaviour
     }
     void Update()
     {
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (TC_GameStateMachine.gsm.ags == TC_GameStateMachine.GameSM.WAITING_ANSWER) {
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.Equals(this.gameObject))
+            if (Input.GetMouseButtonDown(0))
             {
-                onObject = true;
-            }
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            onObject = false;
-        }
-
-        if (Input.GetMouseButton(0) && onObject == true)
-        {
-            rotPosDelta = (Input.mousePosition - previousRot) * speedM;
-            if (Vector3.Dot(transform.up, Vector3.up) >= 0)
-            {
-                transform.Rotate(transform.up, -Vector3.Dot(rotPosDelta, Camera.main.transform.right), Space.World);
-            }
-            else
-            {
-                transform.Rotate(transform.up, Vector3.Dot(rotPosDelta, Camera.main.transform.right), Space.World);
+                if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.Equals(this.gameObject))
+                {
+                    onObject = true;
+                }
             }
 
-            transform.Rotate(Camera.main.transform.right, Vector3.Dot(rotPosDelta, Camera.main.transform.up), Space.World);
-        }
+            if (Input.GetMouseButtonUp(0))
+            {
+                onObject = false;
+            }
 
-        previousRot = Input.mousePosition;
+            if (Input.GetMouseButton(0) && onObject == true)
+            {
+                rotPosDelta = (Input.mousePosition - previousRot) * speedM;
+                if (Vector3.Dot(transform.up, Vector3.up) >= 0)
+                {
+                    transform.Rotate(transform.up, -Vector3.Dot(rotPosDelta, Camera.main.transform.right), Space.World);
+                }
+                else
+                {
+                    transform.Rotate(transform.up, Vector3.Dot(rotPosDelta, Camera.main.transform.right), Space.World);
+                }
+
+                transform.Rotate(Camera.main.transform.right, Vector3.Dot(rotPosDelta, Camera.main.transform.up), Space.World);
+            }
+
+            previousRot = Input.mousePosition;
+        }
     }
 
     public void ResetRotation()

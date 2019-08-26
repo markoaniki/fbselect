@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TC_GameStateMachine : MonoBehaviour
 {
@@ -23,6 +26,11 @@ public class TC_GameStateMachine : MonoBehaviour
 
     [Header("ENDGAME Scene")]
     public string toCall;
+
+    [Header("SavedFiles")]
+    public float nota;
+    public int matricula;
+    public string nome;
 
     // Awake, Start & Update
     void Awake()
@@ -48,11 +56,33 @@ public class TC_GameStateMachine : MonoBehaviour
             case GameSM.WAITING_ANSWER:
                 break;
             case GameSM.COMPARING_ANSWER:
+                TC_TMController.tmc.CompareAnswer();
+                ags = GameSM.DESTROY_AND_SAVE;
                 break;
             case GameSM.DESTROY_AND_SAVE:
+                TC_SaveFile sf = new TC_SaveFile(nota, matricula, nome);
+                string json = JsonUtility.ToJson(sf);
+                Directory.CreateDirectory(Application.dataPath + "\\Saves\\" + matricula.ToString() + "\\TheCube");
+                File.WriteAllText(Application.dataPath + "\\Saves\\" + matricula.ToString() + "\\TheCube\\" + "TC_SaveFile.json", json);
+                ags = GameSM.END;
                 break;
             case GameSM.END:
+                /*SceneManager.LoadScene(toCall, LoadSceneMode.Single);*/
                 break;
         }
+    }
+}
+[Serializable]
+public class TC_SaveFile
+{
+    public float nota;
+    public int matricula;
+    public string nome;
+
+    public TC_SaveFile (float nota, int matricula, string nome)
+    {
+        this.nota = nota;
+        this.matricula = matricula;
+        this.nome = nome;
     }
 }

@@ -23,7 +23,7 @@ public class TC_APSnap : MonoBehaviour
         } else answrd = true;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if(answrd == false && collision.gameObject.GetComponent<TC_OFController>().father == null)
         {
