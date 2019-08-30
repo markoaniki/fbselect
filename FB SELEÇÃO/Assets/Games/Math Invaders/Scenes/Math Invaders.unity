@@ -514,6 +514,7 @@ GameObject:
   - component: {fileID: 152221578}
   - component: {fileID: 152221580}
   - component: {fileID: 152221579}
+  - component: {fileID: 152221581}
   m_Layer: 5
   m_Name: BotaoPraSair
   m_TagString: Untagged
@@ -577,6 +578,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152221577}
   m_CullTransparentMesh: 0
+--- !u!95 &152221581
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152221577}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce6ad16cc8a01eb45922171876d38988, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &165334847
 GameObject:
   m_ObjectHideFlags: 0

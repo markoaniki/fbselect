@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class LogServerTest : MonoBehaviour
 {
-   private string caminho = "localhost:3000";
+   private string caminho = "http://localhost:3300/admin";
     
     //http://localhost/json/servidor.js
     

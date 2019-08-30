@@ -4,12 +4,23 @@ using System.Collections;
  
 public class Server : MonoBehaviour
 {
-    string highscore_url = "http://localhost:5500/";
+    private string highscore_url = "http://localhost:3300/admin";
     string player;
     int score;
- 
+
    void Start() {
         StartCoroutine(Upload());
+        StartCoroutine(GetInfo(highscore_url));
+    }
+
+    IEnumerator GetInfo (string url) {
+        UnityWebRequest www = UnityWebRequest.Get(url + "info");
+        yield return www.SendWebRequest();
+        string response = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
+        
+        Debug.Log(response);
+        if (www.isError) 
+            Debug.Log("error");
     }
 
     IEnumerator Upload() {
@@ -29,3 +40,4 @@ public class Server : MonoBehaviour
         }
     }
 }
+
