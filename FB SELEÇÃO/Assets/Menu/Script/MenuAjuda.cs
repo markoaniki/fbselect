@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//blabas
+
 public class MenuAjuda : MonoBehaviour
 {
     public GameObject Ajuda;
