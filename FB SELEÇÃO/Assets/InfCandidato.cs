@@ -27,7 +27,7 @@ public class InfCandidato : MonoBehaviour
         Student s = SaveManager.GetStudentsByID(int.Parse(text.text));
 
         Nome.text = s.Name;
-        Data.text = s.BirthTime;
+        Data.text = s.BirthDate;
         Escola.text = s.OldSchool;
         Serie.text = s.Grade;
 
