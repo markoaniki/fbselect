@@ -26,7 +26,7 @@ public class SenhaTeste : MonoBehaviour
     {
         // userField = usuarioField.GetComponent<Text>();
         // passField = senhaField.GetComponent<Text>();
-        //teste
+        
     }
     
     public void FazerLogin(bool DebugMode){
