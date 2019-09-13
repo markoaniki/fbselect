@@ -12804,6 +12804,7 @@ GameObject:
   - component: {fileID: 1709125163}
   - component: {fileID: 1709125162}
   - component: {fileID: 1709125165}
+  - component: {fileID: 1709125166}
   m_Layer: 5
   m_Name: ButtonCadastrar
   m_TagString: Untagged
@@ -12944,6 +12945,24 @@ MonoBehaviour:
   Ano: {fileID: 955249651}
   Serie: {fileID: 426364944}
   feedbackmsg: {fileID: 1452531883}
+--- !u!114 &1709125166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709125160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1817fc95dc661de4283b5a09ad93b0e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ifStudentName: {fileID: 1675225131}
+  ifStudentOldSchool: {fileID: 1523322672}
+  ddBirthdateDay: {fileID: 1304420319}
+  ddBirthdateMonth: {fileID: 733579714}
+  ddBirthdateYear: {fileID: 955249651}
+  ddStudentGrade: {fileID: 426364944}
 --- !u!1 &1757037282
 GameObject:
   m_ObjectHideFlags: 0
