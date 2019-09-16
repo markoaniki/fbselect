@@ -11,10 +11,17 @@ public class TC_OFController : MonoBehaviour
     public Vector3 origPos = new Vector3();
     private Vector3 v3OrgMouse;
     public string father = null;
+    public bool lockon = false;
+    public bool hits = false;
 
     [Header("Raycast")]
     public Ray ray;
     public RaycastHit hit;
+
+    [Header("AudioFiles")]
+    public AudioSource asource;
+    public AudioClip snap;
+    public AudioClip missClick;
 
     // Awake, Start & Update
     void Awake()
@@ -34,7 +41,7 @@ public class TC_OFController : MonoBehaviour
     void MouseTest()
     {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        
+
         if (Input.GetMouseButtonDown(0))
         {
             if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.Equals(transform.gameObject))
@@ -57,6 +64,9 @@ public class TC_OFController : MonoBehaviour
         {
             onObject = false;
             transform.localPosition = origPos;
+            if (hits) { asource.clip = snap; } else asource.clip = missClick;
+            asource.Play();
+            hits = false;
         }
     }
 }

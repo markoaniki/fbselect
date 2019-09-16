@@ -31,7 +31,7 @@ public class TC_APSnap : MonoBehaviour
             collision.gameObject.GetComponent<TC_OFController>().father = this.gameObject.name;
             collision.gameObject.transform.SetParent(this.gameObject.transform);
             collision.gameObject.GetComponent<TC_OFController>().origPos = new Vector3(0, 0, 0);
-            
+            collision.gameObject.GetComponent<TC_OFController>().hits = true;
         }
     }
     private void OnCollisionExit(Collision collision)

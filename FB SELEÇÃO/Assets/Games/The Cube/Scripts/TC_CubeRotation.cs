@@ -17,9 +17,16 @@ public class TC_CubeRotation : MonoBehaviour
     public Ray ray;
     public RaycastHit hit;
 
+    [Header("AudioFiles")]
+    public AudioSource asource;
+    public AudioClip keyClick;
+
+    public static TC_CubeRotation tc = null;
+
     // Start & Update
     void Start()
     {
+        if (tc == null) tc = this;
         oRot = transform.rotation;
     }
     void Update()
@@ -61,6 +68,15 @@ public class TC_CubeRotation : MonoBehaviour
 
     public void ResetRotation()
     {
+        DelaytillPlay(keyClick);
         transform.rotation = oRot;
+    }
+
+    public void DelaytillPlay(AudioClip aud)
+    {
+        Debug.Log("Start");
+        asource.clip = aud;
+        asource.Play();
+        Debug.Log("End");
     }
 }

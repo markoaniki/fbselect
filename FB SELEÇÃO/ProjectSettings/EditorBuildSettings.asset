@@ -38,4 +38,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Games/FightingAnxiety/Scenes/TitleScreen_FA.unity
     guid: a9003c4f814b269449639eb92e3e4ad6
+  - enabled: 1
+    path: Assets/Games/The Cube/Scenes/TitleScreen_TC.unity
+    guid: 4ee60e0969a0d72448926138c585d8a2
+  - enabled: 1
+    path: Assets/Games/The Cube/Scenes/CubeRoom.unity
+    guid: 1e04b2e5fb0537841acc8725cb75b245
   m_configObjects: {}

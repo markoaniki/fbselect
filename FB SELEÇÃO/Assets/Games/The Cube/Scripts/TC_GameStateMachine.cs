@@ -67,7 +67,7 @@ public class TC_GameStateMachine : MonoBehaviour
                 ags = GameSM.END;
                 break;
             case GameSM.END:
-                /*SceneManager.LoadScene(toCall, LoadSceneMode.Single);*/
+                SceneManager.LoadScene(toCall, LoadSceneMode.Single);
                 break;
         }
     }

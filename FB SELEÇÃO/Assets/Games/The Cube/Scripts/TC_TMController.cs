@@ -19,6 +19,9 @@ public class TC_TMController : MonoBehaviour
     [Header("Answer Placements")]
     public List<GameObject> aplace = new List<GameObject>();
 
+    [Header("AudioClips")]
+    public AudioClip keyClick;
+
     // Awake, Start & Update
     void Awake()
     {
@@ -71,18 +74,24 @@ public class TC_TMController : MonoBehaviour
         spwndGO[j].transform.SetParent(aplace[j].transform);
         spwndGO[j].GetComponent<TC_OFController>().origPos = new Vector3(0, 0, 0);
         spwndGO[j].transform.localPosition = spwndGO[j].GetComponent<TC_OFController>().origPos;
+        spwndGO[j].GetComponent<TC_OFController>().lockon = true;
     }
 
     public void OnClick()
     {
         if (TC_GameStateMachine.gsm.ags == TC_GameStateMachine.GameSM.WAITING_ANSWER)
         {
+            TC_CubeRotation.tc.DelaytillPlay(keyClick);
+
             for (int i = 0; i < spwndGO.Count; i++)
             {
-                spwndGO[i].transform.parent = null;
-                spwndGO[i].GetComponent<TC_OFController>().father = null;
-                spwndGO[i].GetComponent<TC_OFController>().origPos = spwndGO[i].GetComponent<TC_OFController>().origP;
-                spwndGO[i].transform.localPosition = spwndGO[i].GetComponent<TC_OFController>().origPos;
+                if (!spwndGO[i].GetComponent<TC_OFController>().lockon)
+                {
+                    spwndGO[i].transform.parent = null;
+                    spwndGO[i].GetComponent<TC_OFController>().father = null;
+                    spwndGO[i].GetComponent<TC_OFController>().origPos = spwndGO[i].GetComponent<TC_OFController>().origP;
+                    spwndGO[i].transform.localPosition = spwndGO[i].GetComponent<TC_OFController>().origPos;
+                }
             }
         }
     }
@@ -91,6 +100,8 @@ public class TC_TMController : MonoBehaviour
     {
         if (TC_GameStateMachine.gsm.ags == TC_GameStateMachine.GameSM.WAITING_ANSWER)
         {
+            TC_CubeRotation.tc.DelaytillPlay(keyClick);
+
             bool AA = false;
             for (int i = 0; i < aplace.Count; i++)
             {
