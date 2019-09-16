@@ -25,6 +25,8 @@ public class S_Enemy : MonoBehaviour
                 }
                 else
                 {
+                    S_StateMachine.sm.playSound("attackE");
+                    S_StateMachine.sm.GenHIT("player");
                     // Phase Change
                     S_StateMachine.sm.phaseState = S_StateMachine.PlayerSM.ENEMY_DAMAGE;
                 }
@@ -39,7 +41,6 @@ public class S_Enemy : MonoBehaviour
                 else
                 {
                     cooldown = 0f;
-
                     // Phase Change
                     S_StateMachine.sm.phaseState = S_StateMachine.PlayerSM.ENEMY_PHASE3;
                 }

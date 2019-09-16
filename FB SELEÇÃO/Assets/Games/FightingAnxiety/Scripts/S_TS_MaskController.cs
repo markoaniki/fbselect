@@ -6,19 +6,23 @@ public class S_TS_MaskController : MonoBehaviour
 {
     public GameObject sLeft = null;
     public GameObject sRight = null;
+    private Renderer rend;
+    float scrollSpeed = -0.05f;
+
     // Start is called before the first frame update
     void Start()
     {
-       //if (sLeft == null) transform.GetChild(transform.GetChildCount()-1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(sLeft != null)
+        rend = sLeft.GetComponent<Renderer>();
+
+        if (sLeft != null)
         {
-            sLeft.GetComponent<SpriteRenderer>().size += new Vector2(.01f,.01f);
-            sLeft.transform.position += new Vector3(.01f,0,0);
+            float offset = Time.time * scrollSpeed;
+            rend.material.mainTextureOffset = new Vector2(offset, 0);
         }
         if(sRight != null)
         {

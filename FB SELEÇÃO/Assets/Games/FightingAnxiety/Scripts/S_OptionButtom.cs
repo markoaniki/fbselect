@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class S_OptionButtom : MonoBehaviour
@@ -9,12 +10,13 @@ public class S_OptionButtom : MonoBehaviour
     public string value;
     public Text text;
     public int action = 0;
-    private string ac = "null";
+    private string ac = "";
     public bool correct = false;
 
     [Header("Button Animation")]
     public Image img;
     public SpriteRenderer spRen;
+    public Animator anmtr;
 
     [Header("Player Trigger Animation")]
     public GameObject player;
@@ -27,6 +29,10 @@ public class S_OptionButtom : MonoBehaviour
     void Update()
     {
         img.sprite = spRen.sprite;
+        /*if (anmtr.GetBool("B_Highlight_FA"))
+        {
+            S_StateMachine.sm.playSound("highlight");
+        }*/
 
         switch (action)
         {
@@ -47,6 +53,10 @@ public class S_OptionButtom : MonoBehaviour
         text.text = /*ac +*/ value;
     }
 
+    public void SSound()
+    {
+        S_StateMachine.sm.playSound("select");
+    }
     public void ButtonInteract()
     {
         Debug.Log(value.ToString());

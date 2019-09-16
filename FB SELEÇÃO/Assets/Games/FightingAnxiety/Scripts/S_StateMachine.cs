@@ -7,6 +7,18 @@ public class S_StateMachine : MonoBehaviour
     [Header("Singleton")]
     public static S_StateMachine sm = null;
 
+    [Header("Audio Files")]
+    public AudioSource asource;
+    public AudioClip select;
+    public AudioClip highlight;
+    public AudioClip attackJ;
+    public AudioClip attackE;
+
+    [Header("Hit ICON")]
+    public GameObject hit;
+    public GameObject enemy;
+    public Canvas can;
+
     // States
     public enum PlayerSM
     {
@@ -58,6 +70,8 @@ public class S_StateMachine : MonoBehaviour
                 }
                 else
                 {
+                    playSound("attackJ");
+                    GenHIT("enemy");
                     // Phase Change
                     phaseState = PlayerSM.ANIMATION_DAMAGE;
                 }
@@ -97,6 +111,52 @@ public class S_StateMachine : MonoBehaviour
             // Final Phase
             case (PlayerSM.END):
                 S_Player.play.Destroyer();
+                break;
+        }
+    }
+
+    public void GenHIT(string enmyplyr)
+    {
+        GameObject tempIns = Instantiate<GameObject>(hit);
+        tempIns.transform.SetParent(can.transform);
+        switch (enmyplyr)
+        {
+            case "player":
+                tempIns.transform.position = transform.position;
+                break;
+            case "enemy":
+                tempIns.transform.position = enemy.transform.position;
+                break;
+        }
+    }
+
+    public void playSound(string nome)
+    {
+        switch (nome)
+        {
+            case "highlight":
+                asource.clip = highlight;
+                asource.volume = 1;
+                asource.priority = 0;
+                asource.Play();
+                break;
+            case "select":
+                asource.clip = select;
+                asource.volume = .25f;
+                asource.priority = 0;
+                asource.Play();
+                break;
+            case "attackJ":
+                asource.clip = attackJ;
+                asource.volume = .5f;
+                asource.priority = 0;
+                asource.Play();
+                break;
+            case "attackE":
+                asource.clip = attackE;
+                asource.volume = .5f;
+                asource.priority = 0;
+                asource.Play();
                 break;
         }
     }

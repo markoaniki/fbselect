@@ -950,8 +950,8 @@ MonoBehaviour:
   pathsPosition: []
   scenePaths:
   - Games/Spy Sky/Scenes/Menu
-  - UCScene/UnderConstruction
-  - UCScene/UnderConstruction
+  - Games/FightingAnxiety/Scenes/TitleScreen_FA
+  - Games/The Cube/Scenes/TitleScreen_TC
   - Games/Math Invaders/Scenes/MenuMathInvaders
   - Games/Book Chase/Scenes/TitleScreen_BC
   - Games/PCAMenu/Scenes/Tela Principal
