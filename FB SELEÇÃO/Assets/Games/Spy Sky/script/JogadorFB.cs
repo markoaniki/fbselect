@@ -31,6 +31,8 @@ public class JogadorFB : MonoBehaviour
     public AudioClip somDescer;
     public AudioClip somFim;
 
+    public string sceneFinal;
+
 
     GameObject gameengine;
 
@@ -130,21 +132,24 @@ public class JogadorFB : MonoBehaviour
                 GetComponent<AudioSource>().PlayOneShot(somFim);
                 som++;
             }
-            gameengine.SendMessage("Acabou");
-            Final.text = "Parabéns você terminou!!";
-            //Final.text = "Parabéns você fez:\n" + pontos + " pontos";
 
-            //verificação se apertou a tecla enter para voltar ao inicio
-            if (Input.inputString != "")
-            {
-                if ((int)(Input.inputString[0]) == 13)
-                {
-                    
-                    Application.LoadLevel("Menu");
-                    
-                }
-            
-            }
+            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneFinal);
+
+            //gameengine.SendMessage("Acabou");
+            //Final.text = "Parabéns você terminou!!";
+
+
+            ////verificação se apertou a tecla enter para voltar ao inicio
+            //if (Input.inputString != "")
+            //{
+            //    if ((int)(Input.inputString[0]) == 13)
+            //    {
+
+            //        Application.LoadLevel("Menu");
+
+            //    }
+
+            //}
             Debug.Log("Certo:");
             Debug.Log(pontos);
             Debug.Log("Erradas:");

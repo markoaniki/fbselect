@@ -62,4 +62,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Games/P3Q/Scenes/ID.unity
     guid: 3c99b7905e867bb4a83d769d4101e258
+  - enabled: 1
+    path: Assets/Games/Spy Sky/Scenes/MenuFinal.unity
+    guid: 7e760588fd5169f4da0976043ed06a5f
   m_configObjects: {}

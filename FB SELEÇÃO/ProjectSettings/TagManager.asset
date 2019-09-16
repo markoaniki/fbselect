@@ -8,6 +8,13 @@ TagManager:
   - barreira
   - livro
   - Bala
+  - MaxUp
+  - MaxDown
+  - circulo
+  - Cubo
+  - Paralelogramo
+  - Esfera
+  - Cone
   layers:
   - Default
   - TransparentFX
@@ -19,7 +26,7 @@ TagManager:
   - 
   - fb
   - 'fundo UI '
-  - 
+  - TUTORIAL
   - 
   - 
   - 
