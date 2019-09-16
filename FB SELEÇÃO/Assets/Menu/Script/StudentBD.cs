@@ -105,7 +105,7 @@ public class StudentBD : MonoBehaviour
         // student.Inscription = 1238;
 
         
-//Dia.options[Dia.value].text
+
 
         int studentInscription = 201900000 + ++incriptionCounter;
         String studentBirthdate = ddBirthdateDay.options[ddBirthdateDay.value].text + "/" + ddBirthdateMonth.options[ddBirthdateMonth.value].text + "/" + ddBirthdateYear.options[ddBirthdateYear.value].text;
@@ -115,23 +115,22 @@ public class StudentBD : MonoBehaviour
         MySqlConnection mySqlConnection = ConnectionDB.GetMysqlConnection();
 
         Debug.Log("inscription: " + studentInscription);
-        Debug.Log("Name: " + ifStudentName);
+        Debug.Log("Name: " + ifStudentName.text);
         Debug.Log("Birthdate: " + studentBirthdate);
-        Debug.Log("Name: " + ifStudentOldSchool);
-        Debug.Log("Name: " + ddStudentGrade);
+        Debug.Log("Name: " + ifStudentOldSchool.text);
+        Debug.Log("Name: " + ddStudentGrade.options[ddStudentGrade.value].text);
         try
         {
-            String query = "INSERT INTO student (inscription, admin_ID, info_ID, name, birthdate, oldSchool, grade) " +
-            "VALUES(@inscription, @admin_id, @info_ID, @name, @birthdate, @oldSchool, @grade)";
+            String query = "INSERT INTO student (admin_ID, info_ID, name, birthdate, oldSchool, grade) " +
+            "VALUES(@admin_id, @info_ID, @name, @birthdate, @oldSchool, @grade)";
             //123", "2", "4", "4", "Pedro", "01/01/2000", "Escola antiga", "Serie do aluno"
             MySqlCommand command = new MySqlCommand(query, mySqlConnection);
-            command.Parameters.AddWithValue("@inscription", studentInscription);
             command.Parameters.AddWithValue("@admin_id", admin_id);
             command.Parameters.AddWithValue("@info_ID", info_id);
-            command.Parameters.AddWithValue("@name", ifStudentName);
+            command.Parameters.AddWithValue("@name", ifStudentName.text);
             command.Parameters.AddWithValue("@birthdate", studentBirthdate);
-            command.Parameters.AddWithValue("@oldSchool", ifStudentOldSchool);
-            command.Parameters.AddWithValue("@grade", ddStudentGrade);
+            command.Parameters.AddWithValue("@oldSchool", ifStudentOldSchool.text);
+            command.Parameters.AddWithValue("@grade", ddStudentGrade.options[ddStudentGrade.value].text);
             
 
             mySqlConnection.Open();

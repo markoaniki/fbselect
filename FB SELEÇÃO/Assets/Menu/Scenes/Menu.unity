@@ -12875,8 +12875,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1709125165}
-        m_MethodName: OnClick
+      - m_Target: {fileID: 1709125166}
+        m_MethodName: Insert
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
