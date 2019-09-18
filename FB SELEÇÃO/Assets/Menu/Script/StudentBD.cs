@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class StudentBD : MonoBehaviour
 {
-   public InputField ifStudentName, ifStudentOldSchool;
+   public InputField ifStudentName, ifStudentOldSchool, ifRespName, ifRespEmail, ifRespPhone;
    public Dropdown ddBirthdateDay, ddBirthdateMonth, ddBirthdateYear, ddStudentGrade;
 
    public static int incriptionCounter;

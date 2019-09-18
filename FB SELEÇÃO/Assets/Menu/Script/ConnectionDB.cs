@@ -5,10 +5,10 @@ using MySql.Data.MySqlClient;
 
 public class ConnectionDB
 {
-    private static string server = "127.0.0.1";
+    private static string server = "191.237.252.140";
     private static string database = "fbselect";
-    private static string uid = "root";
-    private static string password = "130700";
+    private static string uid = "fbselect";
+    private static string password = "v#Y9Gap&i3r";
 
 
     public static MySqlConnection GetMysqlConnection()
