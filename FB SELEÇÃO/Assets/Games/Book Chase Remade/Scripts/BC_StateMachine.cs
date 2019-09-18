@@ -82,6 +82,12 @@ public class BC_StateMachine : MonoBehaviour
                 {
                     if(BC_Configuration.config.maxQuest >= BC_Configuration.config.contQuest)
                     {
+
+                        Questao q = SaveManager.estudanteLogado.inProgressQuestion;
+                        q.IsDone = true;
+                        q.HitPercentage = (100.0f * BC_Configuration.config.corQuest) / BC_Configuration.config.maxQuest;
+                        Time.timeScale = 1;
+
                         SceneManager.LoadScene(toCall, LoadSceneMode.Single);
                     }
                 }

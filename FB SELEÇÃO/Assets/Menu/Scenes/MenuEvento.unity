@@ -3062,6 +3062,7 @@ GameObject:
   - component: {fileID: 441898588}
   - component: {fileID: 441898587}
   - component: {fileID: 441898586}
+  - component: {fileID: 441898590}
   m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
@@ -3149,6 +3150,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &441898590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441898585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4f9c0cb156b1814b9ade5452e5e288b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas1: {fileID: 2057577368}
+  canvas2: {fileID: 515974012}
+  canvas3: {fileID: 0}
+  canvas4: {fileID: 0}
+  Lista: {fileID: 0}
+  Cadastro: {fileID: 0}
 --- !u!1 &447829630
 GameObject:
   m_ObjectHideFlags: 0
@@ -3435,7 +3454,7 @@ GameObject:
   - component: {fileID: 515974014}
   - component: {fileID: 515974013}
   m_Layer: 5
-  m_Name: Menu_Escola
+  m_Name: Cadastro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11548,7 +11567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24238238, y: 0.055000003}
   m_AnchorMax: {x: 0.7392133, y: 0.307}
-  m_AnchoredPosition: {x: 0, y: -9.642803}
+  m_AnchoredPosition: {x: 0, y: -9.642807}
   m_SizeDelta: {x: 27.76, y: -6.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1766809369

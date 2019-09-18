@@ -133,6 +133,11 @@ public class JogadorFB : MonoBehaviour
                 som++;
             }
 
+            Questao q = SaveManager.estudanteLogado.inProgressQuestion;
+            q.IsDone = true;
+            q.HitPercentage = (100.0f * pontos) / Fim;
+            Time.timeScale = 1;
+
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneFinal);
 
             //gameengine.SendMessage("Acabou");

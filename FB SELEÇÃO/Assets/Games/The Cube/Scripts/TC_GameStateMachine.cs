@@ -67,6 +67,12 @@ public class TC_GameStateMachine : MonoBehaviour
                 ags = GameSM.END;
                 break;
             case GameSM.END:
+
+                Questao q = SaveManager.estudanteLogado.inProgressQuestion;
+                q.IsDone = true;
+                q.HitPercentage = (100.0f * nota) / 6;
+                Time.timeScale = 1;
+
                 SceneManager.LoadScene(toCall, LoadSceneMode.Single);
                 break;
         }

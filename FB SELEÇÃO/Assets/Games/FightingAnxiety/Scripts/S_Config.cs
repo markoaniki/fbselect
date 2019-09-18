@@ -56,6 +56,12 @@ public class S_Config : MonoBehaviour
     // SaveFile
     public void FAA_SaveFile()
     {
+
+        Questao q = SaveManager.estudanteLogado.inProgressQuestion;
+        q.IsDone = true;
+        q.HitPercentage = (100.0f * scores) / maxquest;
+        Time.timeScale = 1;
+
         FAA_SavedInfo si = new FAA_SavedInfo(gtime, scores, maxquest, noquest, idCode);
         string json = JsonUtility.ToJson(si);
         Directory.CreateDirectory(Application.dataPath + "\\Saves\\" + idCode.ToString() + "\\FightingAgainstAnsiety");
