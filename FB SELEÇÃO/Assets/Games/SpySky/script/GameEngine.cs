@@ -8,18 +8,19 @@ public class GameEngine : MonoBehaviour
     
     public static GameEngine GE = null;
     public List<GameObject> Inimigo;
+    public AudioClip somInicio;
     // Start is called before the first frame update
 
         //void que inicializa antes do start
     void Awake()
     {
-        
+        GetComponent<AudioSource>().PlayOneShot(somInicio);
         //armazenamento da primeira gameEngine criada
         //permite o acesso a primeira instancia de classe, desta classe, por qualquer outro script
         if (GE == null)
         {
          GE = this;
-         InvokeRepeating("CriaInimigo", 1.0f, 1.5f); 
+         InvokeRepeating("CriaInimigo", 1f, 1.5f); 
         }
         
     }
@@ -31,7 +32,7 @@ public class GameEngine : MonoBehaviour
         if (GE == null)
         {
           GE = this;
-          InvokeRepeating("CriaInimigo", 1.0f, 1.5f);   
+          InvokeRepeating("CriaInimigo", 1f, 1.5f);   
         }
    
     }

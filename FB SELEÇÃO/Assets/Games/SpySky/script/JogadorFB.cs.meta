@@ -3,7 +3,13 @@ guid: 1da16f77a28808f43a72e5224bd4d3e4
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - palavra: {instanceID: 0}
+  - pontuacao: {instanceID: 0}
+  - pontuacaoNegativa: {instanceID: 0}
+  - Final: {instanceID: 0}
+  - somSubir: {instanceID: 0}
+  - somDescer: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
