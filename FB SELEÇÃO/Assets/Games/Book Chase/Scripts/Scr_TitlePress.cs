@@ -6,14 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class Scr_TitlePress : MonoBehaviour
 {
+    [Header("Animation")]
     public bool updown = false;
     private Vector3 scale;
     public float scaleControl = 1f;
     public float speedControl = 1f;
     private float time = 0;
+
+    [Header("Next Scene")]
     public string toCall;
+
+    [Header("Audio")]
     public AudioClip audClip;
     public AudioSource audSauce;
+
+    [Header("Lock Button")]
+    public bool pressLock = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,8 +39,9 @@ public class Scr_TitlePress : MonoBehaviour
 
         if (Input.inputString != "")
         {
-            if ((int)(Input.inputString[0]) == 13)
+            if ((int)(Input.inputString[0]) == 13 && !pressLock)
             {
+                pressLock = !pressLock;
                 StartCoroutine(Next());
             }
         }

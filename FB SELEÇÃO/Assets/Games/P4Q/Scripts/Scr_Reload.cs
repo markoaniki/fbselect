@@ -10,7 +10,7 @@ public class Scr_Reload : MonoBehaviour
     // Awake, Start e Update
     void Start()
     {
-        tocall = SceneManager.GetActiveScene().name;
+        //tocall = SceneManager.GetActiveScene().name;
     }
     void Update()
     {
