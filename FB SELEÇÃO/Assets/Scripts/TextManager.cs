@@ -8,6 +8,7 @@ public class TextManager : MonoBehaviour
     public List<string> Textos = new List<string>();
     public Text textoAtual;
     private int index = -1;
+
     // Start is called before the first frame update
     void Start()
     {
