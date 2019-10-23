@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class InputNumeros : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class InputNumeros : MonoBehaviour
     public Canvas MensagemFinal;
     int r;
     int r2;
+
+    public string FinalScene = "";
+
     public void SetInputFieldActive ()
     {
         if(Time.timeScale != 0) 
@@ -67,11 +71,18 @@ public class InputNumeros : MonoBehaviour
     {
         if(contas == 0)
         {
-        //Fim De Jogo
-        Debug.Log("Fim De Jogo");
-        Debug.Log(acertos);
-        Time.timeScale = 0;
-        MensagemFinal.GetComponent<Canvas>().enabled = true;
+            //Fim De Jogo
+            //       Debug.Log("Fim De Jogo");
+            //       Debug.Log(acertos);
+            //       Time.timeScale = 0;
+            //       MensagemFinal.GetComponent<Canvas>().enabled = true;
+
+            Questao q = SaveManager.estudanteLogado.inProgressQuestion;
+            q.IsDone = true;
+            q.HitPercentage = (100.0f * acertos) / TotalDeContas;
+
+            SceneManager.LoadScene(FinalScene, LoadSceneMode.Single);
+
         }
        
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
