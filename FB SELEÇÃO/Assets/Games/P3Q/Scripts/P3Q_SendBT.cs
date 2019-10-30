@@ -35,11 +35,19 @@ public class P3Q_SendBT : MonoBehaviour
 
     private void Last()
     {
+        //SALVAMENTO DE PONTUAÇÃO
         Questao q = SaveManager.estudanteLogado.inProgressQuestion;
         q.IsDone = true;
         q.HitPercentage = (100.0f *P3Q_PointManager.P3Q.Points) / P3Q_PointManager.P3Q.TotalPoints;
-        
-        SceneManager.LoadScene(PATH, LoadSceneMode.Single);
+
+        Debug.Log("Salvou Pontuação");
+        Debug.Log(P3Q_PointManager.P3Q.Points + "/" + P3Q_PointManager.P3Q.TotalPoints);
+
+        //SceneManager.LoadScene(PATH, LoadSceneMode.Single);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(PATH);
+
+        Debug.Log("É para mudar a cena!!!");
+
     }
 
     // Update is called once per frame
