@@ -1111,7 +1111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3943e6968a161c34c9dd880e9e15d159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dica: "C\xF3digo 5:"
+  Dica: "C\xF3digo 5: Imagens est\xE1ticas gerada por uma c\xE2mera."
   Console: {fileID: 2123480619}
 --- !u!1 &190665233
 GameObject:
@@ -3175,7 +3175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3943e6968a161c34c9dd880e9e15d159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dica: "C\xF3digo 3: "
+  Dica: "C\xF3digo 3: P\xE1gina na internet."
   Console: {fileID: 2123480619}
 --- !u!1 &832421620
 GameObject:
@@ -8304,7 +8304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3943e6968a161c34c9dd880e9e15d159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dica: "C\xF3digo 4:"
+  Dica: "C\xF3digo 4: Endere\xE7o de uma p\xE1gina da internet no plural."
   Console: {fileID: 2123480619}
 --- !u!1 &1992897192
 GameObject:
